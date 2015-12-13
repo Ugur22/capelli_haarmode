@@ -1,0 +1,39 @@
+/*body css */
+body { background-image: url('kapper.png'); font-size: medium;  background-repeat: no-repeat;  background-size: cover;  background-attachment: fixed;  }
+* { font-family: 'Indie Flower', cursive; }
+ul {  text-align: center;  }
+.header {  width: 50%; margin: 0 auto;  text-align: center;  }
+/*Buttons, anchors & icons css*/
+a {color:#fff;}
+a.waves-effect.waves-light.btn {  background-color: #fff;  color: #000;  font-weight: bold;  }
+a.waves-effect.waves-light.btn:hover {  background-color: #000;  color: #fff;  }
+.btn i, .btn-large i, .btn-floating i, .btn-large i, .btn-flat i {padding-right: 10px;}
+/*Navbar css */
+.nav-wrapper {  background-color: #ECE9E5;  }
+.nav-wrapper a, .nav-wrapper span {  color: #000;font-size: 20px;}
+#submenu {display: none;}
+#submenu>li>a:hover {color:#fff;}
+#about:hover #submenu{display: block;}
+/* section */
+#aboutus { background-color: #ECE9E5;min-height: 610px;}
+#aboutus>article p { margin: 0 auto;font-size: 19px;width: 62%;padding-bottom: 35px;}
+#aboutus>article{color: #000;padding-top: 1px; text-align: center;}
+#producten{height:500px;}
+#behandeling{background-color: #ECE9E5; height:500px;}
+#behandeling>article{padding-top: 10px; color: #000;}
+section {  height:auto;  width: 100%;}
+/*article css*/
+article {  color:#fff;  width: 100%; }
+#overons p {text-align: center;margin: 0 auto;font-size: 19px;width: 62%;padding-bottom: 35px;}
+article li{font-size: 23px;}
+h1 {  text-align: center;font-size: 3.2rem;}
+article label,input {color:#fff;}
+/* responsive css*/
+@media screen and (max-width: 980px) {  #overons p {  width: 100%;  }  .header {  width: 88%;  } #submenu {display: none;} #aboutus {height: auto;} }
+input[type="submit"]:hover {background-color: #000;  color: #fff; }
+input[type="submit"] {  background-color: #fff;  color: #000;  font-weight: bold; float: right;width: 100px; }
+/*table*/
+table.highlight > tbody > tr:hover,table.highlight > tbody > tr:hover a { color:#000;}
+/* dropdown */
+.select {display: inline-block;color: #000;}
+form, table {padding: 10px;}

@@ -1,0 +1,17 @@
+/*body css */
+body { background-image: url('kapper.png'); font-size: medium;  background-repeat: no-repeat;  background-size: cover;  background-attachment: fixed;  }
+h1,h2,p,li,h3,span,a { font-family: 'Indie Flower', cursive; }
+ul {  text-align: center;  }
+.header {  width: 50%; margin: 0 auto;  text-align: center;  }
+/*Buttons css*/
+a.waves-effect.waves-light.btn {  background-color: #fff;  color: #000;  font-weight: bold;  }
+a.waves-effect.waves-light.btn:hover {  background-color: #000;  color: #fff;  }
+/*Navbar css */
+.nav-wrapper {  background-color: #ECE9E5;  }
+.nav-wrapper a, .nav-wrapper span {  color: #000;font-size: 20px;}
+/*article css*/
+article {  color:#fff;  width: 100%;  padding: 56px;  height: 700px;  }  #overons p {  text-align: center;width: 62%;  font-size: 19px;  padding-bottom: 35px;}
+article li{font-size: 26px;}
+/* responsive css*/
+@media screen and (max-width: 980px) {  #overons p {  width: 100%;  }  .header {  width: 88%;  }  }
+
