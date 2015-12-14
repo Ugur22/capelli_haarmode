@@ -5,10 +5,10 @@ defined('APP_PATH') || define('APP_PATH', realpath('.'));
 return new \Phalcon\Config(array(
     'database' => array(
         'adapter'     => 'Mysql',
-        'host'        => 'localhost',
-        'username'    => 'root',
-        'password'    => 'MYSECRET',
-        'dbname'      => 'Barber_db',
+        'host'        => '****',
+        'username'    => '*****',
+        'password'    => '******',
+        'dbname'      => '******',
         'charset'     => 'utf8',
     ),
     'application' => array(
@@ -19,6 +19,6 @@ return new \Phalcon\Config(array(
         'pluginsDir'     => APP_PATH . '/app/plugins/',
         'libraryDir'     => APP_PATH . '/app/library/',
         'cacheDir'       => APP_PATH . '/app/cache/',
-        'baseUri'        => '/gurucoder/',
+        'baseUri'        => '/',
     )
 ));
