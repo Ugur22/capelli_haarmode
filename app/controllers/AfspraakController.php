@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 class AfspraakController extends BaseController
 {
     public function indexAction()
@@ -11,29 +14,42 @@ class AfspraakController extends BaseController
 
     public function toevoegenAction()
     {
-        $afspraak = new Afspraak();
-        // store and check for erros
-        $success = $afspraak->save($this->request->getPost(), array('
-        id', 'begintijd', 'eindtijd', 'datum', 'behandeling_id', 'gebruiker_id'));
-        if ($success) {
-            echo "afspraak is gemaakt";
-        } else {
-            echo " fout bij het maken van een afspraak ";
-
-            foreach ($afspraak->getMessages() as $message) {
-                echo $message->getMessage(), "<br/>";
+        if ($this->request->isPost()) {
+            // get name from input fields
+            $begintijd = $this->request->getPost("begintijd");
+            $datum = $this->request->getPost("datum");
+            $behandeling = $this->request->getPost("behandeling_id");
+            $medewerker = $this->request->getPost("gebruiker_id");
+            $endTime =  strtotime($begintijd)+ (30*60);
+            $eindtijd = date("H:i",$endTime );
+            // store values in  a variable
+            $afspraak = new Afspraak();
+            $afspraak->begintijd = $begintijd;
+            $afspraak->eindtijd =  $eindtijd;
+            $afspraak->datum = $datum;
+            $afspraak->behandeling_id = $behandeling;
+            $afspraak->gebruiker_id = $medewerker;
+            // create record in DB
+            $result = $afspraak->save();
+            // check if there's any invalid input
+            if(!$result)
+            {
+                $output = [];
+                foreach($afspraak->getMessages() as $message)
+                {
+                    $output[] = $message;
+                }
+                $output = implode(',', $output);
+                $this->flash->error($output);
             }
+            $this->view->enable();
         }
-        $this->view->enable();
-        $this->response->redirect('afspraak/overzicht');
+         $this->response->redirect('afspraak/overzicht');
     }
 
     public function overzichtAction()
     {
         $afspraak = Afspraak::find();
-        //$beginTime = strtotime('now');
-        //$endTime = date("H:i", strtotime('+30 minutes', $beginTime));
         $this->view->setVar('afspraak', $afspraak);
-        //$this->view->setVar("string", $afspraak->getBegintijd());
     }
 }

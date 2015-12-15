@@ -14,6 +14,8 @@ a.waves-effect.waves-light.btn:hover {  background-color: #000;  color: #fff;  }
 #submenu {display: none;}
 #submenu>li>a:hover {color:#fff;}
 #about:hover #submenu{display: block;}
+/* */
+label{font-size: 19px;}
 /* section */
 #producten { background-color: #ECE9E5;min-height: 610px;}
 #producten>article p { margin: 0 auto;font-size: 19px;width: 62%;padding-bottom: 35px;}

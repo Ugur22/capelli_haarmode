@@ -9,10 +9,6 @@
     <?php echo $this->tag->textField(array('begintijd', 'class' => 'timepicker')); ?>
 </p>
 <p>
-    <label for="eindtijd">eindtijd</label>
-    <?php echo $this->tag->textField(array('eindtijd', 'class' => 'timepicker')); ?>
-</p>
-<p>
     <label for="behandeling">behandeling</label>
     <select name="behandeling_id" class="select">
         <?php foreach ($behandeling as $b) { ?>

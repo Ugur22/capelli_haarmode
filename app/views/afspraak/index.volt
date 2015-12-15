@@ -9,10 +9,6 @@
     {{ text_field("begintijd","class":"timepicker") }}
 </p>
 <p>
-    <label for="eindtijd">eindtijd</label>
-    {{ text_field("eindtijd","class":"timepicker") }}
-</p>
-<p>
     <label for="behandeling">behandeling</label>
     <select name="behandeling_id" class="select">
         {% for b in behandeling %}

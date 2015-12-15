@@ -19,10 +19,10 @@
     </thead>
     <?php foreach ($afspraak as $af) { ?>
         <tr>
-            <td>Erik Van Dijk</td>
+            <td>Busra Karadeniz</td>
             <td><?php echo $af->datum; ?></td>
             <td class="hide_row"><?php echo $af->begintijd; ?></td>
-            <td class="hide_row"><?php echo $af->begintijd; ?></td>
+            <td class="hide_row"><?php echo $af->eindtijd; ?></td>
             <td><?php echo $af->gebruiker->voornaam; ?></td>
             <td class="hide_row"><?php echo $af->behandeling->behandeling; ?></td>
             <td class="hide_row"><?php echo $af->behandeling->prijs; ?></td>
