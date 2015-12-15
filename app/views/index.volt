@@ -16,8 +16,7 @@
             <a href="" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="left hide-on-med-and-down">
                 <li><a   href="{{ url("index") }}">home</a></li>
-                <li id="about"><a href="{{ url("user") }}">over ons</a>
-                </li>
+                <li id="about"><a href="{{ url("user") }}">over ons</a></li>
                 <li><a href="{{ url("user") }}">contact</a></li>
                 <li><a href="{{ url("afspraak") }}">afspraak maken</a></li>
                 <li><a href="{{ url("afspraak/overzicht") }}">admin</a></li>
