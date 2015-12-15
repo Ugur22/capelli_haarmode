@@ -14,13 +14,15 @@ a.waves-effect.waves-light.btn:hover {  background-color: #000;  color: #fff;  }
 #submenu {display: none;}
 #submenu>li>a:hover {color:#fff;}
 #about:hover #submenu{display: block;}
+/* */
+label{font-size: 19px;}
 /* section */
-#aboutus { background-color: #ECE9E5;min-height: 610px;}
-#aboutus>article p { margin: 0 auto;font-size: 19px;width: 62%;padding-bottom: 35px;}
-#aboutus>article{color: #000;padding-top: 1px; text-align: center;}
+#producten { background-color: #ECE9E5;min-height: 610px;}
+#producten>article p { margin: 0 auto;font-size: 19px;width: 62%;padding-bottom: 35px;}
+#producten>article{color: #000;padding-top: 1px; text-align: center;}
 #producten{height:500px;}
-#behandeling{background-color: #ECE9E5; height:500px;}
-#behandeling>article{padding-top: 10px; color: #000;}
+#behandeling{ height:500px;}
+#behandeling>article{padding-top: 10px; color: #fff;}
 section {  height:auto;  width: 100%;}
 /*article css*/
 article {  color:#fff;  width: 100%; }
@@ -29,7 +31,7 @@ article li{font-size: 23px;}
 h1 {  text-align: center;font-size: 3.2rem;}
 article label,input {color:#fff;}
 /* responsive css*/
-@media screen and (max-width: 980px) {  #overons p {  width: 100%;  }  .header {  width: 88%;  } #submenu {display: none;} #aboutus {height: auto;} }
+@media screen and (max-width: 980px) {  #overons p {  width: 90%;  }  .header {  width: 88%;  } #submenu {display: none;} #aboutus {height: auto;} .hide_row{display: none;} }
 input[type="submit"]:hover {background-color: #000;  color: #fff; }
 input[type="submit"] {  background-color: #fff;  color: #000;  font-weight: bold; float: right;width: 100px; }
 /*table*/
@@ -37,3 +39,4 @@ table.highlight > tbody > tr:hover,table.highlight > tbody > tr:hover a { color:
 /* dropdown */
 .select {display: inline-block;color: #000;}
 form, table {padding: 10px;}
+

@@ -10,17 +10,17 @@ class UserController extends BaseController
 {
     public function indexAction()
     {
-        $user = users::find();
+       // $user = users::find();
 
-        $this->view->setVar('user',$user);
+        //$this->view->setVar('user',$user);
     }
 
     public function videoAction()
     {
-        $permalink = $this->dispatcher->getParam('permalink');
-        $user = users::findByPermalink($permalink);
+        //$permalink = $this->dispatcher->getParam('permalink');
+       // $user = users::findByPermalink($permalink);
 
-        $this->view->setVar('user',$user);
+       // $this->view->setVar('user',$user);
 
     }
 }
