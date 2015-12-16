@@ -69,13 +69,24 @@ $di->set('modelsMetadata', function () {
     return new MetaDataAdapter();
 });
 
+// custom dispatcher overrides the default
+$di->set('$dispatcher', function () use ($di) {
+    $eventsManager = $di->getShared('eventsManager');
+    // custom ACl class
+    $permission = new Permission();
+    // Listen for events from the permission class
+    $eventsManager->attach('dispatch', $permission);
+    $dispatcher = new \Phalcon\Mvc\Dispatcher();
+    $dispatcher->setEventsManager($eventsManager);
+    return $dispatcher;
+});
+
 /**
  * Start the session the first time some component request the session service
  */
 $di->setShared('session', function () {
-    $session = new SessionAdapter();
+    $session = new \Phalcon\Session\Adapter\Files();
     $session->start();
-
     return $session;
 });
 

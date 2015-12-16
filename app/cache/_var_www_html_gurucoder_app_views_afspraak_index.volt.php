@@ -29,4 +29,4 @@
 <p>
     <?php echo $this->tag->submitButton(array('bevestig')); ?>
 </p>
-</form>
+<?php echo $this->tag->endForm(); ?>

@@ -1,12 +1,13 @@
 <?php
 
 
-
+use Phalcon\Tag;
 
 class AfspraakController extends BaseController
 {
     public function indexAction()
     {
+        Tag::setTitle("maak afspraak");
         $this->view->afspraak = Afspraak::find();
         $this->view->gebruiker = Gebruiker::find();
         $this->view->behandeling = Behandeling::find();
@@ -15,14 +16,14 @@ class AfspraakController extends BaseController
     public function toevoegenAction()
     {
         if ($this->request->isPost()) {
-            // get name from input fields
+            // get value from input fields
             $begintijd = $this->request->getPost("begintijd");
             $datum = $this->request->getPost("datum");
             $behandeling = $this->request->getPost("behandeling_id");
             $medewerker = $this->request->getPost("gebruiker_id");
             $endTime =  strtotime($begintijd)+ (30*60);
             $eindtijd = date("H:i",$endTime );
-            // store values in  a variable
+            // store values in a variable
             $afspraak = new Afspraak();
             $afspraak->begintijd = $begintijd;
             $afspraak->eindtijd =  $eindtijd;
@@ -39,17 +40,13 @@ class AfspraakController extends BaseController
                 {
                     $output[] = $message;
                 }
-                $output = implode(',', $output);
+                $output = implode('<br /> <br />', $output);
                 $this->flash->error($output);
+            }else {
+                $this->response->redirect('admin/overzicht');
             }
             $this->view->enable();
         }
-         $this->response->redirect('afspraak/overzicht');
-    }
 
-    public function overzichtAction()
-    {
-        $afspraak = Afspraak::find();
-        $this->view->setVar('afspraak', $afspraak);
     }
 }
