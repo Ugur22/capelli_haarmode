@@ -22,14 +22,10 @@
             <td>Busra Karadeniz</td>
             <td>{{ af.datum }}</td>
             <td class="hide_row">{{ af.begintijd }}</td>
-<<<<<<< HEAD
-            <td class="hide_row">{{ af.begintijd }}</td>
-=======
             <td class="hide_row">{{ af.eindtijd }}</td>
->>>>>>> c241f81af481f719015c2e4eea6a16cd129e0f8b
             <td>{{ af.gebruiker.voornaam }}</td>
             <td class="hide_row">{{ af.behandeling.behandeling }}</td>
-            <td class="hide_row">{{ af.behandeling.prijs }}</td>
+            <td class="hide_row">€{{ af.behandeling.prijs }}</td>
             <td class="hide_row"><a href="{{ url("user") }}"><i class="small material-icons">settings</i></a></td>
             <td class="hide_row"><a href="{{ url("user") }}"><i class="small material-icons">delete</i></a></td>
         </tr>
