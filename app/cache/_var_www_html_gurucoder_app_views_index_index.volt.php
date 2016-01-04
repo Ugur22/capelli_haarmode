@@ -1,4 +1,4 @@
-<section>
+<section id="#home">
     <article>
         <div class="header">
             <h1>Knippen zonder wachten!</h1>

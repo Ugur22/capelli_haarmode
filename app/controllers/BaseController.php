@@ -5,11 +5,14 @@ error_reporting(E_ALL);
 
 use Phalcon\Mvc\Controller;
 use Phalcon\Http\Request;
+use Phalcon\Tag;
 
 class BaseController extends controller
 {
     public function initialize()
     {
+        Tag::prependTitle("Capelli Haarmode");
+
         // CSS imports
         $this->assets
             ->collection('header')

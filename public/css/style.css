@@ -20,7 +20,7 @@ label{font-size: 19px;}
 #producten { background-color: #ECE9E5;min-height: 610px;}
 #producten>article p { margin: 0 auto;font-size: 19px;width: 62%;padding-bottom: 35px;}
 #producten>article{color: #000;padding-top: 1px; text-align: center;}
-#producten{height:500px;}
+#producten{height:500px;margin-top: 180px;}
 #behandeling{ height:500px;}
 #behandeling>article{padding-top: 10px; color: #fff;}
 section {  height:auto;  width: 100%;}
@@ -38,5 +38,8 @@ input[type="submit"] {  background-color: #fff;  color: #000;  font-weight: bold
 table.highlight > tbody > tr:hover,table.highlight > tbody > tr:hover a { color:#000;}
 /* dropdown */
 .select {display: inline-block;color: #000;}
+/* form */
 form, table {padding: 10px;}
+form.login-form {  width: 18%;  margin: 0 auto;  }
+
 

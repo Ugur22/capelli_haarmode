@@ -6,6 +6,8 @@
  * Date: 24-11-15
  * Time: 22:23
  */
+use Phalcon\Tag;
+
 class UserController extends BaseController
 {
     public function indexAction()
@@ -14,6 +16,8 @@ class UserController extends BaseController
 
 
         //$this->view->setVar('user',$user);
+
+        Tag::setTitle("over ons");
 
        // $this->view->setVar('user',$user);
     }

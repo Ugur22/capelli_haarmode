@@ -29,4 +29,4 @@
 <p>
     {{ submit_button('bevestig') }}
 </p>
-</form>
+{{ end_form() }}
