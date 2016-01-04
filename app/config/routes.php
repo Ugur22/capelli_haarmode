@@ -7,17 +7,13 @@
  */
 $router = new \Phalcon\Mvc\Router();
 
-$router->add('/video/{permalink}', array(
-    'controller' => 'user',
-    'action' => 'video',
+$router->add('/detail', array(
+    'controller' => 'admin',
+    'action' => 'detail',
 ));
 
 $router->add('/overzicht}', array(
     'controller' => 'afspraak',
     'action' => 'overzicht',
 ));
-
-
-
-
 return $router;

@@ -1,15 +1,18 @@
 {% extends "layouts/dashboard.volt" %}
 {% block content %}
-<h1>Maak een afspraak</h1>
-{{ form('afspraak/toevoegen') }}
+<h1>Details</h1>
+{{ form('admin/wijzig') }}
+    {% for af in afspraak %}
 <p>
     <label for="datum">datum</label>
-    {{  text_field("datum","class":"datepicker", "value":"") }}
+    {{  text_field("datum","class":"datepicker", "value":af.datum ) }}
 </p>
 <p>
     <label for="begintijd">begintijd:</label>
-    {{ text_field("begintijd","class":"timepicker") }}
+    {{ text_field("begintijd","class":"timepicker" , "value":af.begintijd) }}
 </p>
+{{ hidden_field("id", "value":af.id) }}
+   {% endfor %}
 <p>
     <label for="behandeling">behandeling</label>
        <div class="input-field col s12 m6">

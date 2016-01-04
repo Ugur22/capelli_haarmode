@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+a:3:{i:0;s:1646:"<!DOCTYPE html>
 <html>
 <head>
     <?php echo $this->tag->getTitle(); ?>
@@ -31,27 +31,9 @@
 </div>
 <!--<h1><?php echo $this->dispatcher->getActionName(); ?></h1>-->
 <article>
-    
-    <h1>Login</h1>
-    <?php echo $this->tag->form(array('account/login', 'class' => 'login-form')); ?>
-    <p>
-        <label for="email">email</label>
-        <?php echo $this->tag->textField(array('email')); ?>
-    </p>
-    <p>
-        <label for="password">password:</label>
-        <?php echo $this->tag->passwordfield('password'); ?>
-    </p>
-    <p>
-        <div class="buttons_login">
-        <a href="<?php echo $this->url->get('account/register'); ?>" class="waves-effect waves-light btn">registreer</a>
-        <?php echo $this->tag->submitButton(array('login')); ?>
-        </div>
-    </p>
-    <?php echo $this->tag->endForm(); ?>
-    <?php echo $this->flash->output(); ?>
-
+    ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:5:"
+    ";s:4:"file";s:51:"/var/www/html/gurucoder/app/views/layouts/base.volt";s:4:"line";i:35;}}i:1;s:76:"
 </article>
 <?php echo $this->assets->outputJs('footer'); ?>
 </body>
-</html>
+</html>";}
