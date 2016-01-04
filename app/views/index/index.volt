@@ -1,3 +1,5 @@
+{% extends "layouts/base.volt" %}
+{% block content %}
 <section id="#home">
     <article>
         <div class="header">
@@ -26,3 +28,4 @@
         <h1>behandelingen</h1>
     </article>
 </section >
+{% endblock %}

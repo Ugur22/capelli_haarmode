@@ -1828,7 +1828,7 @@ $(document).ready(function(){
      * Attach Waves to an input element (or any element which doesn't
      * bubble mouseup/mousedown events).
      *   Intended to be used with dynamically loaded forms/inputs, or
-     * where the user doesn't want a delegated click handler.
+     * where the overons doesn't want a delegated click handler.
      */
     Waves.attach = function(element) {
         //FUTURE: automatically add waves classes and allow users
@@ -2034,7 +2034,7 @@ $(document).ready(function(){
         if (menu_id.hasClass('fixed')) {
           $(window).resize( function() {
             if (window.innerWidth > 992) {
-              // Close menu if window is resized bigger than 992 and user has fixed sidenav
+              // Close menu if window is resized bigger than 992 and overons has fixed sidenav
               if ($('#sidenav-overlay').css('opacity') !== 0 && menuOut) {
                 removeMenu(true);
               }
@@ -2193,7 +2193,7 @@ $(document).ready(function(){
             var velocityX = e.gesture.velocityX;
             panning = false;
             if (options.edge === 'left') {
-              // If velocityX <= 0.3 then the user is flinging the menu closed so ignore menuOut
+              // If velocityX <= 0.3 then the overons is flinging the menu closed so ignore menuOut
               if ((menuOut && velocityX <= 0.3) || velocityX < -0.5) {
                 menu_id.velocity({left: 0}, {duration: 300, queue: false, easing: 'easeOutQuad'});
                 $('#sidenav-overlay').velocity({opacity: 1 }, {duration: 50, queue: false, easing: 'easeOutQuad'});
@@ -2363,7 +2363,7 @@ $(document).ready(function(){
 
 
 	/**
-	 * Called when the user scrolls the window
+	 * Called when the overons scrolls the window
 	 */
 	function onScroll() {
 		// unique tick id
@@ -3047,7 +3047,7 @@ $(document).ready(function(){
         $(newOption).addClass('selected');
       };
 
-      // Allow user to search by typing
+      // Allow overons to search by typing
       // this array is cleared after 1 second
       var filterQuery = [],
           onKeyDown = function(e){
@@ -3119,7 +3119,7 @@ $(document).ready(function(){
                 activateOption(options, newOption);
             }
 
-            // Automaticaly clean filter query so user can search again by starting letters
+            // Automaticaly clean filter query so overons can search again by starting letters
             setTimeout(function(){ filterQuery = []; }, 1000);
           };
 

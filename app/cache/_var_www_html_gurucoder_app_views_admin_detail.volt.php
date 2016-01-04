@@ -30,41 +30,49 @@
 <!--<h1><?php echo $this->dispatcher->getActionName(); ?></h1>-->
 <article>
     
-<h1>Overzicht afspraken</h1>
-    <h1><?php echo $loginnaam; ?></h1>
-<div class="header">
-    <a href="<?php echo $this->url->get('afspraak'); ?>" class="waves-effect waves-light btn"><i class="small material-icons">replay</i>maak
-        een nieuwe afspraak</a>
-</div>
-<table class="highlight">
-    <thead>
-    <tr>
-        <th>klant</th>
-        <th>datum</th>
-        <th class="hide_row">begintijd</th>
-        <th class="hide_row">eindtijd</th>
-        <th>medewerker</th>
-        <th class="hide_row">behandeling</th>
-        <th class="hide_row">prijs</th>
-        <th>details</th>
-        <th class="hide_row">delete</th>
-    </tr>
-    </thead>
+<h1>Details</h1>
+<?php echo $this->tag->form(array('admin/wijzig')); ?>
     <?php foreach ($afspraak as $af) { ?>
-        <tr>
-            <td><?php echo $af->klant; ?></td>
-            <td><?php echo $af->datum; ?></td>
-            <td class="hide_row"><?php echo $af->begintijd; ?></td>
-            <td class="hide_row"><?php echo $af->eindtijd; ?></td>
-            <td><?php echo $af->gebruiker->voornaam; ?></td>
-            <td class="hide_row"><?php echo $af->behandeling->behandeling; ?></td>
-            <td class="hide_row">€<?php echo $af->behandeling->prijs; ?></td>
-            <td><a href="<?php echo $this->url->get('admin/detail/' . $af->id); ?>"><i class="small material-icons">info</i></a></td>
-            <td class="hide_row"><a href="<?php echo $this->url->get('admin/verwijder/' . $af->id); ?>"><i class="small material-icons">delete</i></a></td>
-        </tr>
-    <?php } ?>
-</table>
-
+<p>
+    <label for="datum">datum</label>
+    <?php echo $this->tag->textField(array('datum', 'class' => 'datepicker', 'value' => $af->datum)); ?>
+</p>
+<p>
+    <label for="begintijd">begintijd:</label>
+    <?php echo $this->tag->textField(array('begintijd', 'class' => 'timepicker', 'value' => $af->begintijd)); ?>
+</p>
+<?php echo $this->tag->hiddenField(array('id', 'value' => $af->id)); ?>
+   <?php } ?>
+<p>
+    <label for="behandeling">behandeling</label>
+       <div class="input-field col s12 m6">
+    <select name="behandeling_id" class="select">
+     <option value="" disabled selected> kies een behandeling</option>
+        <?php foreach ($behandeling as $b) { ?>
+            <option value="<?php echo $b->id; ?>"><?php echo $b->behandeling; ?></option>
+        <?php } ?>
+    </select>
+    </div>
+</p>
+<p>
+    <label for="medewerker">medewerker</label>
+     <div class="input-field col s12 m6">
+    <select name="gebruiker_id" class="select">
+     <option value="" disabled selected> kies een medewerker</option>
+        <?php foreach ($gebruiker as $af) { ?>
+            <?php if ($af->rol == 'admin') { ?>
+                <option value="<?php echo $af->id; ?>"><?php echo $af->voornaam; ?></option>
+            <?php } ?>
+        <?php } ?>
+    </select>
+    </div>
+</p>
+<p>
+    <?php echo $this->tag->submitButton(array('bevestig')); ?>
+<span><?php echo $this->flash->output(); ?></span>
+</p>
+<?php echo $this->tag->endForm(); ?>
+    
 </article>
 <?php echo $this->assets->outputJs('footer'); ?>
 </body>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+a:3:{i:0;s:1507:"<!DOCTYPE html>
 <html>
 <head>
     <?php echo $this->tag->getTitle(); ?>
@@ -29,43 +29,9 @@
 </div>
 <!--<h1><?php echo $this->dispatcher->getActionName(); ?></h1>-->
 <article>
-    
-<h1>Overzicht afspraken</h1>
-    <h1><?php echo $loginnaam; ?></h1>
-<div class="header">
-    <a href="<?php echo $this->url->get('afspraak'); ?>" class="waves-effect waves-light btn"><i class="small material-icons">replay</i>maak
-        een nieuwe afspraak</a>
-</div>
-<table class="highlight">
-    <thead>
-    <tr>
-        <th>klant</th>
-        <th>datum</th>
-        <th class="hide_row">begintijd</th>
-        <th class="hide_row">eindtijd</th>
-        <th>medewerker</th>
-        <th class="hide_row">behandeling</th>
-        <th class="hide_row">prijs</th>
-        <th>details</th>
-        <th class="hide_row">delete</th>
-    </tr>
-    </thead>
-    <?php foreach ($afspraak as $af) { ?>
-        <tr>
-            <td><?php echo $af->klant; ?></td>
-            <td><?php echo $af->datum; ?></td>
-            <td class="hide_row"><?php echo $af->begintijd; ?></td>
-            <td class="hide_row"><?php echo $af->eindtijd; ?></td>
-            <td><?php echo $af->gebruiker->voornaam; ?></td>
-            <td class="hide_row"><?php echo $af->behandeling->behandeling; ?></td>
-            <td class="hide_row">€<?php echo $af->behandeling->prijs; ?></td>
-            <td><a href="<?php echo $this->url->get('admin/detail/' . $af->id); ?>"><i class="small material-icons">info</i></a></td>
-            <td class="hide_row"><a href="<?php echo $this->url->get('admin/verwijder/' . $af->id); ?>"><i class="small material-icons">delete</i></a></td>
-        </tr>
-    <?php } ?>
-</table>
-
+    ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:5:"
+    ";s:4:"file";s:56:"/var/www/html/gurucoder/app/views/layouts/dashboard.volt";s:4:"line";i:33;}}i:1;s:76:"
 </article>
 <?php echo $this->assets->outputJs('footer'); ?>
 </body>
-</html>
+</html>";}

@@ -1,7 +1,6 @@
 <?php
-
-
-use Phalcon\Tag;
+use Phalcon\Tag,
+    \Phalcon\Security;
 
 class AfspraakController extends BaseController
 {
@@ -13,6 +12,13 @@ class AfspraakController extends BaseController
         $this->view->behandeling = Behandeling::find();
     }
 
+
+    public function getSessionAction()
+    {
+        $user = $this->session->get('auth');
+        print_r($user['email']);
+    }
+
     public function toevoegenAction()
     {
         if ($this->request->isPost()) {
@@ -21,32 +27,55 @@ class AfspraakController extends BaseController
             $datum = $this->request->getPost("datum");
             $behandeling = $this->request->getPost("behandeling_id");
             $medewerker = $this->request->getPost("gebruiker_id");
-            $endTime =  strtotime($begintijd)+ (30*60);
-            $eindtijd = date("H:i",$endTime );
-            // store values in a variable
-            $afspraak = new Afspraak();
-            $afspraak->begintijd = $begintijd;
-            $afspraak->eindtijd =  $eindtijd;
-            $afspraak->datum = $datum;
-            $afspraak->behandeling_id = $behandeling;
-            $afspraak->gebruiker_id = $medewerker;
-            // create record in DB
-            $result = $afspraak->save();
-            // check if there's any invalid input
-            if(!$result)
-            {
-                $output = [];
-                foreach($afspraak->getMessages() as $message)
-                {
-                    $output[] = $message;
-                }
-                $output = implode('<br /> <br />', $output);
-                $this->flash->error($output);
-            }else {
+            $checkafspraak = Afspraak::findFirst([
+                "begintijd = :begintijd: AND datum = :datum: AND gebruiker_id = :gebruiker_id:",
+                "bind" => [
+                    "begintijd" => $begintijd,
+                    "datum" => $datum,
+                    "gebruiker_id" => $medewerker
+                ]
+            ]);
+            if ($checkafspraak) {
+                $this->response->redirect('afspraak/index');
+                $this->flash->error("deze combiniatie van datum, begintijd en medewerker is al bezet");
+            } else {
+                $endTime = strtotime($begintijd) + (30 * 60);
+                $eindtijd = date("H:i", $endTime);
+                $user = $this->session->get('auth');
+                $email = $user['email'];
+                $voornaam = $user['voornaam'];
+                $achternaam = $user['achternaam'];
+                $tussenvoegsel = $user['tussenvoegsel'];
+                $volledigenaam_spaces = $voornaam . " " . $tussenvoegsel . " " . $achternaam;
+                // store values in a variable
+                $afspraak = new Afspraak();
+                $afspraak->begintijd = $begintijd;
+                $afspraak->eindtijd = $eindtijd;
+                $afspraak->datum = $datum;
+                $afspraak->behandeling_id = $behandeling;
+                $afspraak->gebruiker_id = $medewerker;
+                $afspraak->klant = $volledigenaam_spaces;
+                // create record in DB
+                $result = $afspraak->save();
+
+
+                // check if there's any invalid input
+                if (!$result)
+                    if (!$result) {
+                        $output = [];
+                        foreach ($afspraak->getMessages() as $message) {
+                            $output[] = $message;
+                        }
+                        $output = implode("<br><br>", $output);
+                        $this->flash->error($output);
+                        $this->response->redirect('afspraak/index');
+                        return;
+                    }
+                $message = "uw afspraak is " .$datum . " " . $begintijd. " bij  " .$medewerker;
+                $message = wordwrap($message, 70, "\r\n");
+                mail($email, 'Capelli Haarmode kappers afspraak', $message);
                 $this->response->redirect('admin/overzicht');
             }
-            $this->view->enable();
         }
-
     }
 }

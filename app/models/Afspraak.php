@@ -1,6 +1,6 @@
 <?php
-use Phalcon\Mvc\Model\Validator;
-use Phalcon\Mvc\Model\Validator\PresenceOf;
+use \Phalcon\Mvc\Model\Validator,
+    \Phalcon\Security;
 
 /**
  * Created by PhpStorm.
@@ -10,16 +10,32 @@ use Phalcon\Mvc\Model\Validator\PresenceOf;
  */
 class Afspraak extends BaseModel
 {
-    public $begintijd;
-
     public function initialize()
     {
         $this->belongsTo('behandeling_id', 'Behandeling', 'id', ['alias' => 'behandeling', 'reusable' => true]);
         $this->belongsTo('gebruiker_id', 'Gebruiker', 'id', ['alias' => 'gebruiker', 'reusable' => true]);
     }
 
-    public function getBegintijd()
+    public function validation()
     {
-        return $this->begintijd;
+        $this->validate(new  Validator\PresenceOf([
+            'field' => 'behandeling_id',
+            'message' => 'U heeft geen behandeling gekozen'
+        ]));
+        $this->validate(new  Validator\PresenceOf([
+            'field' => 'gebruiker_id',
+            'message' => 'U heeft geen medewerker gekozen'
+        ]));
+        $this->validate(new  Validator\PresenceOf([
+            'field' => 'datum',
+            'message' => 'U heeft geen datum gekozen'
+        ]));
+        $this->validate(new  Validator\PresenceOf([
+            'field' => 'begintijd',
+            'message' => 'U heeft geen begintijd gekozen'
+        ]));
+        if ($this->validationHasFailed()) {
+            return false;
+        }
     }
 }

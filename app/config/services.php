@@ -90,6 +90,17 @@ $di->setShared('session', function () {
     return $session;
 });
 
+// flash data (temp data)
+$di->set('flash', function () {
+    $flash = new \Phalcon\Flash\Session([
+        'error' => 'data-error',
+        'success' => 'data-success',
+        'notice' => 'data-error',
+        'warning' => 'data-errors'
+    ]);
+    return $flash;
+});
+
 
 /**
  * Start the session the first time some component request the session service
