@@ -14,10 +14,12 @@ class AccountController extends BaseController
         $this->session->set(
             'auth',
             array(
+                'id' => $gebruiker->id,
                 'voornaam' => $gebruiker->voornaam,
                 'tussenvoegsel' => $gebruiker->tussenvoegsel,
                 'achternaam' => $gebruiker->achternaam,
-                'email' => $gebruiker->email
+                'email' => $gebruiker->email,
+                'rol' => $gebruiker->rol
             )
         );
     }
@@ -33,7 +35,6 @@ class AccountController extends BaseController
         if ($this->request->isPost()) {
             $email = $this->request->getPost('email');
             $password = $this->request->getPost('password');
-
             $gebruiker = Gebruiker::findFirst([
                 "(email = :email: OR username = :email:) AND password = :password:",
                 "bind" => [
@@ -44,12 +45,19 @@ class AccountController extends BaseController
             if ($gebruiker) {
                 //if ($this->security->checkHash($password, $gebruiker->password)) {
                     $this->registerSession($gebruiker);
+                $user = $this->session->get('auth');
+                $rol = ($user['rol']);
+                if($rol == "user")
+                {
                     $this->response->redirect('afspraak/index');
-                    $this->flash->success('welcome' . " " . $gebruiker->voornaam);
+                }else if ($rol == "admin"){
+                    $this->response->redirect('admin/overzicht');
+                }
+                    //$this->flash->success('welcome' . " " . $gebruiker->voornaam);
                 //}
                 //Forward to the afspraken controller if the user is valid
             } else {
-                $this->flash->error("incorrect Credentials");
+                $this->flash->error("De ingevoerde gegevens zijn niet correct");
                 $this->response->redirect('account/index');
             }
         }

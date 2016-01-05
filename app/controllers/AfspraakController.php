@@ -10,13 +10,13 @@ class AfspraakController extends BaseController
         $this->view->afspraak = Afspraak::find();
         $this->view->gebruiker = Gebruiker::find();
         $this->view->behandeling = Behandeling::find();
-    }
 
-
-    public function getSessionAction()
-    {
         $user = $this->session->get('auth');
-        print_r($user['email']);
+        $rol = ($user['rol']);
+        if($rol != "user")
+        {
+            $this->response->redirect("account/index");
+        }
     }
 
     public function toevoegenAction()
@@ -43,6 +43,7 @@ class AfspraakController extends BaseController
                 $eindtijd = date("H:i", $endTime);
                 $user = $this->session->get('auth');
                 $email = $user['email'];
+                $id = $user['id'];
                 $voornaam = $user['voornaam'];
                 $achternaam = $user['achternaam'];
                 $tussenvoegsel = $user['tussenvoegsel'];
@@ -52,13 +53,12 @@ class AfspraakController extends BaseController
                 $afspraak->begintijd = $begintijd;
                 $afspraak->eindtijd = $eindtijd;
                 $afspraak->datum = $datum;
+                $afspraak->klant_id = $id;
                 $afspraak->behandeling_id = $behandeling;
                 $afspraak->gebruiker_id = $medewerker;
                 $afspraak->klant = $volledigenaam_spaces;
                 // create record in DB
                 $result = $afspraak->save();
-
-
                 // check if there's any invalid input
                 if (!$result)
                     if (!$result) {
@@ -74,8 +74,21 @@ class AfspraakController extends BaseController
                 $message = "uw afspraak is " .$datum . " " . $begintijd. " bij  " .$medewerker;
                 $message = wordwrap($message, 70, "\r\n");
                 mail($email, 'Capelli Haarmode kappers afspraak', $message);
-                $this->response->redirect('admin/overzicht');
+                $this->response->redirect('afspraak/overzicht');
             }
         }
+    }
+
+    public function overzichtAction(){
+        Tag::setTitle("Mijn afspraken");
+        $user = $this->session->get('auth');
+        $rol = ($user['rol']);
+        $id = $user['id'];
+        if($rol != "user")
+        {
+            $this->response->redirect("account/index");
+        }
+        $afspraak = Afspraak::find(["klant_id = '" .$id. "'"]);
+        $this->view->setVar('afspraak', $afspraak);
     }
 }

@@ -37,7 +37,7 @@ class Permission extends \Phalcon\Mvc\User\Plugin
         // DEBUG
         $this->session->destroy();
 
-        $role = $this->session->get('role');
+        $role = $this->session->get('rol');
         echo $role;
         if (!$role) {
             $role = self::GUEST;
