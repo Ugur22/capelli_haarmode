@@ -15,7 +15,7 @@ a.waves-effect.waves-light.btn:hover {  background-color: #000;  color: #fff;  }
 .buttons_login {  display: flex;  }
 /* label & errror*/
 label{font-size: 19px;}
-.data-error { width: 50%;  position: absolute;  }
+.data-error { width: 50%;  }
 /* section */
 #producten { background-color: #ECE9E5;min-height: 610px;}
 #producten>article p { margin: 0 auto;font-size: 19px;width: 62%;padding-bottom: 35px;}
@@ -34,7 +34,7 @@ article label,input {color:#fff;}
 form, table {padding: 10px;}
 form.login-form {  width: 20%;  margin: 0 auto;  }
 /* responsive css*/
-@media screen and (max-width: 980px) {  #overons p {  width: 90%;  }  .data-error { width: 100%;  position: absolute; top:763px;}  .header {  width: 88%;  } #submenu {display: none;} #aboutus {height: auto;} .hide_row{display: none;} form.login-form {  width: 100%;}   }
+@media screen and (max-width: 980px) {  #overons p {  width: 90%;  }  .data-error { width: 100%; top:763px;}  .header {  width: 88%;  } #submenu {display: none;} #aboutus {height: auto;} .hide_row{display: none;} form.login-form {  width: 100%;}   }
 input[type="submit"]:hover {background-color: #000;  color: #fff; }
 input[type="submit"] {  background-color: #fff;  color: #000;  font-weight: bold; float: right;width: 141px;}
 /*table*/
