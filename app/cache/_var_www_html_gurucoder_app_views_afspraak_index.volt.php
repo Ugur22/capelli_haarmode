@@ -19,7 +19,6 @@
                 <li id="about"><a href="<?php echo $this->url->get('overons'); ?>">over ons</a></li>
                 <li><a href="<?php echo $this->url->get('contact'); ?>">contact</a></li>
                 <li><a href="<?php echo $this->url->get('afspraak'); ?>">afspraak maken</a></li>
-                <li><a href="<?php echo $this->url->get('admin/overzicht'); ?>">admin</a></li>
                 <li><a href="<?php echo $this->url->get('afspraak/overzicht'); ?>">mijn afspraken</a></li>
                 <li><a href="<?php echo $this->url->get('index/signout'); ?>">Logout</a></li>
             </ul>
@@ -28,7 +27,6 @@
                 <li><a href="<?php echo $this->url->get('overons'); ?>">over ons</a></li>
                 <li><a href="<?php echo $this->url->get('contact'); ?>">contact</a></li>
                 <li><a href="<?php echo $this->url->get('afspraak'); ?>">afspraak maken</a></li>
-                <li><a href="<?php echo $this->url->get('admin/overzicht'); ?>">admin</a></li>
                 <li><a href="<?php echo $this->url->get('afspraak/overzicht'); ?>">mijn afspraken</a></li>
                 <li><a href="<?php echo $this->url->get('account/signout'); ?>">Logout</a></li>
             </ul>
@@ -42,11 +40,11 @@
 <?php echo $this->tag->form(array('afspraak/toevoegen')); ?>
 <p>
     <label for="datum">datum</label>
-    <?php echo $this->tag->textField(array('datum', 'class' => 'datepicker', 'value' => '')); ?>
+    <?php echo $this->tag->textField(array('datum', 'class' => 'datepicker', 'placeholder' => 'klik hier om een datum te kiezen')); ?>
 </p>
 <p>
     <label for="begintijd">begintijd:</label>
-    <?php echo $this->tag->textField(array('begintijd', 'class' => 'timepicker')); ?>
+    <?php echo $this->tag->textField(array('begintijd', 'class' => 'timepicker', 'placeholder' => 'klik hier om een tijd te kiezen')); ?>
 </p>
 <p>
     <label for="behandeling">behandeling</label>

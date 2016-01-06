@@ -19,7 +19,6 @@
                 <li id="about"><a href="{{ url("overons") }}">over ons</a></li>
                 <li><a href="{{ url("contact") }}">contact</a></li>
                 <li><a href="{{ url("afspraak") }}">afspraak maken</a></li>
-                <li><a href="{{ url("admin/overzicht") }}">admin</a></li>
                 <li><a href="{{ url("afspraak/overzicht") }}">mijn afspraken</a></li>
                 <li><a href="{{ url("index/signout") }}">Logout</a></li>
             </ul>
@@ -28,7 +27,6 @@
                 <li><a href="{{ url("overons") }}">over ons</a></li>
                 <li><a href="{{ url("contact") }}">contact</a></li>
                 <li><a href="{{ url("afspraak") }}">afspraak maken</a></li>
-                <li><a href="{{ url("admin/overzicht") }}">admin</a></li>
                 <li><a href="{{ url("afspraak/overzicht") }}">mijn afspraken</a></li>
                 <li><a href="{{ url("account/signout") }}">Logout</a></li>
             </ul>

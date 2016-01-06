@@ -31,6 +31,7 @@
         {{ text_field("telefoonnummer") }}
     </div>
     {{ submit_button('maak account') }}
+    <input type="hidden" name="{{ security.getTokenKey() }}" value="{{ security.getToken() }}">
     {{ end_form() }}
     {{ flash.output() }}
 {% endblock %}

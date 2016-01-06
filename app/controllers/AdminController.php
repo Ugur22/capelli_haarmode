@@ -47,6 +47,7 @@ class AdminController extends BaseController
     public function detailAction($id)
     {
         $afspraak = Afspraak::findById($id);
+       //$behandeling = Behandeling::findFirst()
         $this->view->gebruiker = Gebruiker::find();
         $this->view->behandeling = Behandeling::find();
         $this->view->setVar('afspraak', $afspraak);

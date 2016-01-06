@@ -1,25 +1,25 @@
-{% extends "layouts/dashboard.volt" %}
+{% extends "layouts/beheer.volt" %}
 {% block content %}
 <h1>Details</h1>
 {{ form('admin/wijzig') }}
     {% for af in afspraak %}
 <p>
     <label for="datum">datum</label>
-    {{  text_field("datum","class":"datepicker", "value":af.datum ) }}
+    {{  text_field("datum","class":"datepicker", "value":af.datum | escape_attr ) }}
 </p>
 <p>
     <label for="begintijd">begintijd:</label>
-    {{ text_field("begintijd","class":"timepicker" , "value":af.begintijd) }}
+    {{ text_field("begintijd","class":"timepicker" , "value":af.begintijd | escape_attr) }}
 </p>
-{{ hidden_field("id", "value":af.id) }}
+{{ hidden_field("id", "value":af.id | escape_attr) }}
    {% endfor %}
 <p>
     <label for="behandeling">behandeling</label>
        <div class="input-field col s12 m6">
     <select name="behandeling_id" class="select">
-     <option value="" disabled selected> kies een behandeling</option>
+     <option value=""> kies een behandeling</option>
         {% for b in behandeling %}
-            <option value="{{ b.id }}">{{ b.behandeling }}</option>
+            <option value="{{ b.id | escape_attr }}">{{ b.behandeling | escape_attr }}</option>
         {% endfor %}
     </select>
     </div>
@@ -28,10 +28,10 @@
     <label for="medewerker">medewerker</label>
      <div class="input-field col s12 m6">
     <select name="gebruiker_id" class="select">
-     <option value="" disabled selected> kies een medewerker</option>
+     <option value=""  > kies een medewerker</option>
         {% for af in gebruiker %}
             {% if af.rol == "admin" %}
-                <option value="{{ af.id }}">{{ af.voornaam }}</option>
+                <option value="{{ af.id | escape_attr }}">{{ af.voornaam | escape_attr }}</option>
             {% endif %}
         {% endfor %}
     </select>

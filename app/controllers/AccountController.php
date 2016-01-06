@@ -33,51 +33,64 @@ class AccountController extends BaseController
     public function loginAction()
     {
         if ($this->request->isPost()) {
-            $email = $this->request->getPost('email');
-            $password = $this->request->getPost('password');
-            $gebruiker = Gebruiker::findFirst([
-                "(email = :email: OR username = :email:) AND password = :password:",
-                "bind" => [
-                    "email" => $email,
-                    "password" => ($password)
-                ]
-            ]);
-            if ($gebruiker) {
-                //if ($this->security->checkHash($password, $gebruiker->password)) {
-                    $this->registerSession($gebruiker);
-                $user = $this->session->get('auth');
-                $rol = ($user['rol']);
-                if($rol == "user")
-                {
-                    $this->response->redirect('afspraak/index');
-                }else if ($rol == "admin"){
-                    $this->response->redirect('admin/overzicht');
-                }
-                    //$this->flash->success('welcome' . " " . $gebruiker->voornaam);
-                //}
-                //Forward to the afspraken controller if the user is valid
-            } else {
-                $this->flash->error("De ingevoerde gegevens zijn niet correct");
+            // check for CSRF security
+            if ($this->security->checkToken() == false) {
+                $this->flash->error("invalid CSRF token ");
                 $this->response->redirect('account/index');
+            } else {
+                $email = $this->request->getPost('email');
+                $password = $this->request->getPost('password');
+                $gebruiker = Gebruiker::findFirst([
+                    "(email = :email: OR username = :email:) AND password = :password:",
+                    "bind" => [
+                        "email" => $email,
+                        "password" => ($password)
+                    ]
+                ]);
+                if ($gebruiker) {
+                    //if ($this->security->checkHash($password, $gebruiker->password)) {
+                    $this->registerSession($gebruiker);
+                    $user = $this->session->get('auth');
+                    $rol = ($user['rol']);
+                    if ($rol == "user") {
+                        $this->response->redirect('afspraak/index');
+                    } else if ($rol == "admin") {
+                        $this->response->redirect('admin/overzicht');
+                    }
+                    //$this->flash->success('welcome' . " " . $gebruiker->voornaam);
+                    //}
+                    //Forward to the afspraken controller if the user is valid
+                } else {
+                    $this->flash->error("De ingevoerde gegevens zijn niet correct");
+                    $this->response->redirect('account/index');
+                }
             }
         }
     }
 
-    public function signoutAction()
+    public
+    function signoutAction()
     {
         echo $this->session->destroy();
         $this->response->redirect('index/index');
     }
 
-    public function registerAction()
+    public
+    function registerAction()
     {
         Tag::setTitle("registreer");
     }
 
-    public function createAccountAction()
+    public
+    function createAccountAction()
     {
 
         if ($this->request->isPost()) {
+            // check for CSRF security
+            if ($this->security->checkToken() == false) {
+                $this->flash->error("invalid CSRF token ");
+                $this->response->redirect('account/index');
+            }
             $email = $this->request->getPost('email');
             $username = $this->request->getPost('username');
             $voornaam = $this->request->getPost('voornaam');

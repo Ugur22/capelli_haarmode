@@ -90,6 +90,8 @@ $di->setShared('session', function () {
     return $session;
 });
 
+
+
 // flash data (temp data)
 $di->set('flash', function () {
     $flash = new \Phalcon\Flash\Session([

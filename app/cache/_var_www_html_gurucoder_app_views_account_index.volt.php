@@ -46,6 +46,7 @@
         <div class="buttons_login">
         <a href="<?php echo $this->url->get('account/register'); ?>" class="waves-effect waves-light btn">registreer</a>
         <?php echo $this->tag->submitButton(array('login')); ?>
+        <input type="hidden" name="<?php echo $this->security->getTokenKey(); ?>" value="<?php echo $this->security->getToken(); ?>">
         </div>
     </p>
     <?php echo $this->tag->endForm(); ?>

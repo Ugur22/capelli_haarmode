@@ -1,4 +1,4 @@
-a:3:{i:0;s:2260:"<!DOCTYPE html>
+a:3:{i:0;s:2070:"<!DOCTYPE html>
 <html>
 <head>
     <?php echo $this->tag->getTitle(); ?>
@@ -19,7 +19,6 @@ a:3:{i:0;s:2260:"<!DOCTYPE html>
                 <li id="about"><a href="<?php echo $this->url->get('overons'); ?>">over ons</a></li>
                 <li><a href="<?php echo $this->url->get('contact'); ?>">contact</a></li>
                 <li><a href="<?php echo $this->url->get('afspraak'); ?>">afspraak maken</a></li>
-                <li><a href="<?php echo $this->url->get('admin/overzicht'); ?>">admin</a></li>
                 <li><a href="<?php echo $this->url->get('afspraak/overzicht'); ?>">mijn afspraken</a></li>
                 <li><a href="<?php echo $this->url->get('index/signout'); ?>">Logout</a></li>
             </ul>
@@ -28,7 +27,6 @@ a:3:{i:0;s:2260:"<!DOCTYPE html>
                 <li><a href="<?php echo $this->url->get('overons'); ?>">over ons</a></li>
                 <li><a href="<?php echo $this->url->get('contact'); ?>">contact</a></li>
                 <li><a href="<?php echo $this->url->get('afspraak'); ?>">afspraak maken</a></li>
-                <li><a href="<?php echo $this->url->get('admin/overzicht'); ?>">admin</a></li>
                 <li><a href="<?php echo $this->url->get('afspraak/overzicht'); ?>">mijn afspraken</a></li>
                 <li><a href="<?php echo $this->url->get('account/signout'); ?>">Logout</a></li>
             </ul>
@@ -38,7 +36,7 @@ a:3:{i:0;s:2260:"<!DOCTYPE html>
 <!--<h1><?php echo $this->dispatcher->getActionName(); ?></h1>-->
 <article>
     ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:5:"
-    ";s:4:"file";s:56:"/var/www/html/gurucoder/app/views/layouts/dashboard.volt";s:4:"line";i:41;}}i:1;s:76:"
+    ";s:4:"file";s:56:"/var/www/html/gurucoder/app/views/layouts/dashboard.volt";s:4:"line";i:39;}}i:1;s:76:"
 </article>
 <?php echo $this->assets->outputJs('footer'); ?>
 </body>

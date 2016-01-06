@@ -63,6 +63,7 @@
         <?php echo $this->tag->textField(array('telefoonnummer')); ?>
     </div>
     <?php echo $this->tag->submitButton(array('maak account')); ?>
+    <input type="hidden" name="<?php echo $this->security->getTokenKey(); ?>" value="<?php echo $this->security->getToken(); ?>">
     <?php echo $this->tag->endForm(); ?>
     <?php echo $this->flash->output(); ?>
 

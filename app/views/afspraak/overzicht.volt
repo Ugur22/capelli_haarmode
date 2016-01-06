@@ -8,7 +8,6 @@
     <table class="highlight">
         <thead>
         <tr>
-            <th>klant</th>
             <th>datum</th>
             <th>begintijd</th>
             <th>eindtijd</th>
@@ -19,13 +18,12 @@
         </thead>
         {% for af in afspraak %}
             <tr>
-                <td>{{ af.klant }}</td>
-                <td>{{ af.datum }}</td>
-                <td>{{ af.begintijd }}</td>
-                <td>{{ af.eindtijd }}</td>
-                <td class="hide_row">{{ af.gebruiker.voornaam }}</td>
-                <td class="hide_row">{{ af.behandeling.behandeling }}</td>
-                <td class="hide_row">€{{ af.behandeling.prijs }}</td>
+                <td>{{ af.datum | escape_attr}}</td>
+                <td>{{ af.begintijd | escape_attr}}</td>
+                <td>{{ af.eindtijd | escape_attr}}</td>
+                <td class="hide_row">{{ af.gebruiker.voornaam | escape_attr}}</td>
+                <td class="hide_row">{{ af.behandeling.behandeling | escape_attr}}</td>
+                <td class="hide_row">€{{ af.behandeling.prijs | escape_attr}}</td>
             </tr>
         {% endfor %}
     </table>

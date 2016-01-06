@@ -19,7 +19,6 @@
                 <li id="about"><a href="<?php echo $this->url->get('overons'); ?>">over ons</a></li>
                 <li><a href="<?php echo $this->url->get('contact'); ?>">contact</a></li>
                 <li><a href="<?php echo $this->url->get('afspraak'); ?>">afspraak maken</a></li>
-                <li><a href="<?php echo $this->url->get('admin/overzicht'); ?>">admin</a></li>
                 <li><a href="<?php echo $this->url->get('afspraak/overzicht'); ?>">mijn afspraken</a></li>
                 <li><a href="<?php echo $this->url->get('index/signout'); ?>">Logout</a></li>
             </ul>
@@ -28,7 +27,6 @@
                 <li><a href="<?php echo $this->url->get('overons'); ?>">over ons</a></li>
                 <li><a href="<?php echo $this->url->get('contact'); ?>">contact</a></li>
                 <li><a href="<?php echo $this->url->get('afspraak'); ?>">afspraak maken</a></li>
-                <li><a href="<?php echo $this->url->get('admin/overzicht'); ?>">admin</a></li>
                 <li><a href="<?php echo $this->url->get('afspraak/overzicht'); ?>">mijn afspraken</a></li>
                 <li><a href="<?php echo $this->url->get('account/signout'); ?>">Logout</a></li>
             </ul>
@@ -46,7 +44,6 @@
     <table class="highlight">
         <thead>
         <tr>
-            <th>klant</th>
             <th>datum</th>
             <th>begintijd</th>
             <th>eindtijd</th>
@@ -57,13 +54,12 @@
         </thead>
         <?php foreach ($afspraak as $af) { ?>
             <tr>
-                <td><?php echo $af->klant; ?></td>
-                <td><?php echo $af->datum; ?></td>
-                <td><?php echo $af->begintijd; ?></td>
-                <td><?php echo $af->eindtijd; ?></td>
-                <td class="hide_row"><?php echo $af->gebruiker->voornaam; ?></td>
-                <td class="hide_row"><?php echo $af->behandeling->behandeling; ?></td>
-                <td class="hide_row">€<?php echo $af->behandeling->prijs; ?></td>
+                <td><?php echo $this->escaper->escapeHtmlAttr($af->datum); ?></td>
+                <td><?php echo $this->escaper->escapeHtmlAttr($af->begintijd); ?></td>
+                <td><?php echo $this->escaper->escapeHtmlAttr($af->eindtijd); ?></td>
+                <td class="hide_row"><?php echo $this->escaper->escapeHtmlAttr($af->gebruiker->voornaam); ?></td>
+                <td class="hide_row"><?php echo $this->escaper->escapeHtmlAttr($af->behandeling->behandeling); ?></td>
+                <td class="hide_row">€<?php echo $this->escaper->escapeHtmlAttr($af->behandeling->prijs); ?></td>
             </tr>
         <?php } ?>
     </table>

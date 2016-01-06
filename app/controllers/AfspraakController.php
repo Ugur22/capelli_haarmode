@@ -4,6 +4,8 @@ use Phalcon\Tag,
 
 class AfspraakController extends BaseController
 {
+
+
     public function indexAction()
     {
         Tag::setTitle("maak afspraak");
@@ -84,11 +86,12 @@ class AfspraakController extends BaseController
         $user = $this->session->get('auth');
         $rol = ($user['rol']);
         $id = $user['id'];
+        $afspraak = Afspraak::find(["klant_id = '" .$id. "'
+        "]);
         if($rol != "user")
         {
             $this->response->redirect("account/index");
         }
-        $afspraak = Afspraak::find(["klant_id = '" .$id. "'"]);
         $this->view->setVar('afspraak', $afspraak);
     }
 }

@@ -1,4 +1,4 @@
-{% extends "layouts/dashboard.volt" %}
+{% extends "layouts/beheer.volt" %}
 {% block content %}
 <h1>Overzicht afspraken</h1>
     <h1>{{ loginnaam }}</h1>
@@ -22,15 +22,15 @@
     </thead>
     {% for af in afspraak %}
         <tr>
-            <td>{{ af.klant }}</td>
-            <td>{{ af.datum }}</td>
-            <td class="hide_row">{{ af.begintijd }}</td>
-            <td class="hide_row">{{ af.eindtijd }}</td>
-            <td>{{ af.gebruiker.voornaam }}</td>
-            <td class="hide_row">{{ af.behandeling.behandeling }}</td>
-            <td class="hide_row">€{{ af.behandeling.prijs }}</td>
-            <td><a href="{{ url("admin/detail/" ~ af.id) }}"><i class="small material-icons">info</i></a></td>
-            <td class="hide_row"><a href="{{ url("admin/verwijder/" ~ af.id) }}"><i class="small material-icons">delete</i></a></td>
+            <td>{{ af.klant | escape_attr}}</td>
+            <td>{{ af.datum| escape_attr }}</td>
+            <td class="hide_row">{{ af.begintijd | escape_attr }}</td>
+            <td class="hide_row">{{ af.eindtijd | escape_attr }}</td>
+            <td>{{ af.gebruiker.voornaam | escape_attr }}</td>
+            <td class="hide_row">{{ af.behandeling.behandeling | escape_attr }}</td>
+            <td class="hide_row">€{{ af.behandeling.prijs | escape_attr }}</td>
+            <td><a href="{{ url("admin/detail/" ~ af.id | escape_attr) }}"><i class="small material-icons">info</i></a></td>
+            <td class="hide_row"><a href="{{ url("admin/verwijder/" ~ af.id | escape_attr) }}"><i class="small material-icons">delete</i></a></td>
         </tr>
     {% endfor %}
 </table>
