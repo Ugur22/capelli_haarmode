@@ -18,16 +18,20 @@ class AdminController extends BaseController
     public function overzichtAction()
     {
         Tag::setTitle("overzicht afspraken");
+        $user = $this->session->get('auth');
+        $rol = ($user['rol']);
+        if($rol != "admin")
+        {
+            $this->response->redirect("account/index");
+        }
         $afspraak = Afspraak::find();
         $this->view->setVar('afspraak', $afspraak);
-        $user = $this->session->get('auth');
         $loginnaam = ($user['voornaam']);
         $this->view->setVar("loginnaam", $loginnaam);
     }
 
     public function verwijderAction($id)
     {
-        //$id = $this->request->get('id');
         $afspraak = Afspraak::find($id);
         if (!$afspraak) {
             echo "afspraak bestaat niet";
@@ -42,8 +46,8 @@ class AdminController extends BaseController
 
     public function detailAction($id)
     {
-//        $id = $this->request->get('detail');
         $afspraak = Afspraak::findById($id);
+       //$behandeling = Behandeling::findFirst()
         $this->view->gebruiker = Gebruiker::find();
         $this->view->behandeling = Behandeling::find();
         $this->view->setVar('afspraak', $afspraak);

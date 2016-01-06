@@ -4,11 +4,11 @@
 {{ form('afspraak/toevoegen') }}
 <p>
     <label for="datum">datum</label>
-    {{  text_field("datum","class":"datepicker", "value":"") }}
+    {{  text_field("datum","class":"datepicker","placeholder":"klik hier om een datum te kiezen") }}
 </p>
 <p>
     <label for="begintijd">begintijd:</label>
-    {{ text_field("begintijd","class":"timepicker") }}
+    {{ text_field("begintijd","class":"timepicker","placeholder":"klik hier om een tijd te kiezen") }}
 </p>
 <p>
     <label for="behandeling">behandeling</label>

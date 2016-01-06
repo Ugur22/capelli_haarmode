@@ -32,23 +32,38 @@
 <!--<h1><?php echo $this->dispatcher->getActionName(); ?></h1>-->
 <article>
     
-    <h1>Login</h1>
-    <?php echo $this->tag->form(array('account/login', 'class' => 'login-form')); ?>
-    <p>
+    <h1><h1>registreer</h1></h1>
+    <?php echo $this->tag->form(array('account/createAccount', 'class' => 'login-form')); ?>
+    <div class="input-field col s6">
         <label for="email">email</label>
         <?php echo $this->tag->textField(array('email')); ?>
-    </p>
-    <p>
+    </div>
+    <div class="input-field col s6">
+        <label for="username">username</label>
+        <?php echo $this->tag->textField(array('username')); ?>
+    </div>
+    <div class="input-field col s6">
         <label for="password">password:</label>
         <?php echo $this->tag->passwordfield('password'); ?>
-    </p>
-    <p>
-        <div class="buttons_login">
-        <a href="<?php echo $this->url->get('account/register'); ?>" class="waves-effect waves-light btn">registreer</a>
-        <?php echo $this->tag->submitButton(array('login')); ?>
-        <input type="hidden" name="<?php echo $this->security->getTokenKey(); ?>" value="<?php echo $this->security->getToken(); ?>">
-        </div>
-    </p>
+    </div>
+    <div class="input-field col s6">
+        <label for="confirm_password">herhaal password:</label>
+        <?php echo $this->tag->passwordfield('confirm_password'); ?>
+    </div>
+    <div class="input-field col s6">
+        <label for="voornaam">voornaam</label>
+        <?php echo $this->tag->textField(array('voornaam')); ?>
+    </div>
+    <div class="input-field col s6">
+        <label for="achternaam">achternaam</label>
+        <?php echo $this->tag->textField(array('achternaam')); ?>
+    </div>
+    <div class="input-field col s6">
+        <label for="telefoonnummer">telefoonnummer</label>
+        <?php echo $this->tag->textField(array('telefoonnummer')); ?>
+    </div>
+    <?php echo $this->tag->submitButton(array('maak account')); ?>
+    <input type="hidden" name="<?php echo $this->security->getTokenKey(); ?>" value="<?php echo $this->security->getToken(); ?>">
     <?php echo $this->tag->endForm(); ?>
     <?php echo $this->flash->output(); ?>
 

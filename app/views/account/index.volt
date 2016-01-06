@@ -14,6 +14,7 @@
         <div class="buttons_login">
         <a href="{{ url("account/register") }}" class="waves-effect waves-light btn">registreer</a>
         {{ submit_button('login') }}
+        <input type="hidden" name="{{ security.getTokenKey() }}" value="{{ security.getToken() }}">
         </div>
     </p>
     {{ end_form() }}

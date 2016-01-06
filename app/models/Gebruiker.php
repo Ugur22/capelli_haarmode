@@ -44,32 +44,27 @@ class Gebruiker extends BaseModel
         ]));
         $this->validate(new  Validator\Email([
             'field' => 'email',
-            'message' => 'geen correcte emailadres'
+            'message' => 'geen correcte emailadres',
+            'allowEmpty' => true
         ]));
         $this->validate(new  Validator\Uniqueness([
             'field' => 'email',
-            'message' => 'dit emailadres is al in gebruik'
+            'message' => 'dit emailadres is al in gebruik',
+            'allowEmpty' => true
         ]));
         $this->validate(new Validator\Numericality([
             'field' => 'telefoonnummer',
-            'message' => 'dit is geen geldige telefoonnummer'
-        ]));
-        $this->validate(new Validator\Regex([
-            'field' => 'voornaam',
-            'pattern' => "/[a-z]+/",
-            'message' => 'dit is geen geldige voornaam'
-        ]));
-        $this->validate(new Validator\Regex([
-            'field' => 'achternaam',
-            'pattern' => "/[a-z]+/",
-            'message' => 'dit is geen geldige achternaam'
+            'message' => 'dit is geen geldige telefoonnummer',
+            'allowEmpty' => true
+
         ]));
         $this->validate(new  Validator\StringLength([
             'field' => 'password',
             'max' => '30',
             'min' => '4',
             'messageMaximum' => 'password mag niet langer zijn dan 30 karakters',
-            'messageMinimum' => 'password mag niet korter zijn dan 4 karakters'
+            'messageMinimum' => 'password mag niet korter zijn dan 4 karakters',
+            'allowEmpty' => true
         ]));
         if ($this->validationHasFailed()) {
             return false;

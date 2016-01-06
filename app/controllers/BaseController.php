@@ -30,4 +30,14 @@ class BaseController extends controller
             -> addJs('js/picker.date.js')
             ->addJs('js/picker.time.js');
     }
+    /*
+    public function beforeExecuteRoute()
+    {
+        if ($this->session->has("userSessionID")) {
+            $this->view->setTemplateBefore("dashboard");
+        }else{
+            $this->view->setTemplateBefore("base");
+        }
+    }
+    */
 }

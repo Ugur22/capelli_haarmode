@@ -16,18 +16,14 @@
             <a href="" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="left hide-on-med-and-down">
                 <li><a   href="<?php echo $this->url->get('index'); ?>">home</a></li>
-                <li id="about"><a href="<?php echo $this->url->get('user'); ?>">over ons</a></li>
+                <li id="about"><a href="<?php echo $this->url->get('overons'); ?>">over ons</a></li>
                 <li><a href="<?php echo $this->url->get('contact'); ?>">contact</a></li>
-                <li><a href="<?php echo $this->url->get('afspraak'); ?>">afspraak maken</a></li>
-                <li><a href="<?php echo $this->url->get('admin/overzicht'); ?>">admin</a></li>
                 <li><a href="<?php echo $this->url->get('account'); ?>">Login</a></li>
             </ul>
             <ul class="side-nav" id="mobile-demo">
                 <li><a href="<?php echo $this->url->get('index'); ?>">home</a></li>
-                <li><a href="<?php echo $this->url->get('user'); ?>">over ons</a></li>
+                <li><a href="<?php echo $this->url->get('overons'); ?>">over ons</a></li>
                 <li><a href="<?php echo $this->url->get('contact'); ?>">contact</a></li>
-                <li><a href="<?php echo $this->url->get('afspraak'); ?>">afspraak maken</a></li>
-                <li><a href="<?php echo $this->url->get('admin/overzicht'); ?>">admin</a></li>
                 <li><a href="<?php echo $this->url->get('account'); ?>">Login</a></li>
             </ul>
         </div>
@@ -35,7 +31,8 @@
 </div>
 <!--<h1><?php echo $this->dispatcher->getActionName(); ?></h1>-->
 <article>
-    <?php echo $this->getContent(); ?>
+    
+    
 </article>
 <?php echo $this->assets->outputJs('footer'); ?>
 </body>

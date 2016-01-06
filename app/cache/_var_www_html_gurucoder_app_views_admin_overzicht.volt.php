@@ -15,19 +15,16 @@
             <span class="brand-logo right">Capelli Haarmode</span>
             <a href="" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="left hide-on-med-and-down">
-                <li><a href="<?php echo $this->url->get('afspraak'); ?>">afspraak maken</a></li>
                 <li><a href="<?php echo $this->url->get('admin/overzicht'); ?>">admin</a></li>
-                <li><a href="<?php echo $this->url->get('index/signout'); ?>">Logout</a></li>
+                <li><a href="<?php echo $this->url->get('account/signout'); ?>">Logout</a></li>
             </ul>
             <ul class="side-nav" id="mobile-demo">
-                <li><a href="<?php echo $this->url->get('afspraak'); ?>">afspraak maken</a></li>
                 <li><a href="<?php echo $this->url->get('admin/overzicht'); ?>">admin</a></li>
                 <li><a href="<?php echo $this->url->get('account/signout'); ?>">Logout</a></li>
             </ul>
         </div>
     </nav>
 </div>
-<!--<h1><?php echo $this->dispatcher->getActionName(); ?></h1>-->
 <article>
     
 <h1>Overzicht afspraken</h1>
@@ -52,15 +49,15 @@
     </thead>
     <?php foreach ($afspraak as $af) { ?>
         <tr>
-            <td><?php echo $af->klant; ?></td>
-            <td><?php echo $af->datum; ?></td>
-            <td class="hide_row"><?php echo $af->begintijd; ?></td>
-            <td class="hide_row"><?php echo $af->eindtijd; ?></td>
-            <td><?php echo $af->gebruiker->voornaam; ?></td>
-            <td class="hide_row"><?php echo $af->behandeling->behandeling; ?></td>
-            <td class="hide_row">€<?php echo $af->behandeling->prijs; ?></td>
-            <td><a href="<?php echo $this->url->get('admin/detail/' . $af->id); ?>"><i class="small material-icons">info</i></a></td>
-            <td class="hide_row"><a href="<?php echo $this->url->get('admin/verwijder/' . $af->id); ?>"><i class="small material-icons">delete</i></a></td>
+            <td><?php echo $this->escaper->escapeHtmlAttr($af->klant); ?></td>
+            <td><?php echo $this->escaper->escapeHtmlAttr($af->datum); ?></td>
+            <td class="hide_row"><?php echo $this->escaper->escapeHtmlAttr($af->begintijd); ?></td>
+            <td class="hide_row"><?php echo $this->escaper->escapeHtmlAttr($af->eindtijd); ?></td>
+            <td><?php echo $this->escaper->escapeHtmlAttr($af->gebruiker->voornaam); ?></td>
+            <td class="hide_row"><?php echo $this->escaper->escapeHtmlAttr($af->behandeling->behandeling); ?></td>
+            <td class="hide_row">€<?php echo $this->escaper->escapeHtmlAttr($af->behandeling->prijs); ?></td>
+            <td><a href="<?php echo $this->url->get('admin/detail/' . $this->escaper->escapeHtmlAttr($af->id)); ?>"><i class="small material-icons">info</i></a></td>
+            <td class="hide_row"><a href="<?php echo $this->url->get('admin/verwijder/' . $this->escaper->escapeHtmlAttr($af->id)); ?>"><i class="small material-icons">delete</i></a></td>
         </tr>
     <?php } ?>
 </table>

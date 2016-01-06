@@ -15,7 +15,7 @@
         {{ passwordField("password") }}
     </div>
     <div class="input-field col s6">
-        <label for="herhaal password">herhaal password:</label>
+        <label for="confirm_password">herhaal password:</label>
         {{ passwordField("confirm_password") }}
     </div>
     <div class="input-field col s6">
@@ -31,6 +31,7 @@
         {{ text_field("telefoonnummer") }}
     </div>
     {{ submit_button('maak account') }}
+    <input type="hidden" name="{{ security.getTokenKey() }}" value="{{ security.getToken() }}">
     {{ end_form() }}
     {{ flash.output() }}
 {% endblock %}
