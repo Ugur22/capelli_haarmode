@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- outputs unique title of every page -->
     <?php echo $this->tag->getTitle(); ?>
+    <!-- sets viewport to scale to mobile device -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="shortcut icon" type="image/png" href="http://www.clicinterieurconcepten.nl/img/morebyme-50x50.jpg"/>
+    <!-- outputs CSS files -->
     <?php echo $this->assets->outputCss('header'); ?>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <base href="index">
@@ -29,8 +32,8 @@
         </div>
     </nav>
 </div>
-<!--<h1><?php echo $this->dispatcher->getActionName(); ?></h1>-->
 <article>
+    <!-- outputs the view  -->
     
 <section id="#home">
     <article>
@@ -62,6 +65,7 @@
 </section >
 
 </article>
+<!-- outputs JS scripts -->
 <?php echo $this->assets->outputJs('footer'); ?>
 </body>
 </html>
