@@ -32,6 +32,19 @@
 <!--<h1><?php echo $this->dispatcher->getActionName(); ?></h1>-->
 <article>
     
+<!--
+    <div class="parallax-container">
+        <div class="parallax"><img src="http://reinkenstraat.nl/wp-content/uploads/2013/11/van-hot-naar-hair-reinkenstraat.jpg"></div>
+    </div>
+    <div class="section white">
+        <div class="row container">
+            <h2 class="header">Parallax</h2>
+            <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+        </div>
+    </div>
+    <div class="parallax-container">
+        <div class="parallax"><img src="http://i0.wp.com/prkapper.nl/wp-content/uploads/PR-Kapper-Soest-interieur-wassen.jpg"></div>
+    </div>-->
 <h1>Over ons</h1>
 <section id="overons">
     <p>

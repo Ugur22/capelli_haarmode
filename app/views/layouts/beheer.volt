@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- outputs unique title of every page -->
     {{ get_title() }}
+    <!-- sets viewport to scale to mobile device -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="shortcut icon" type="image/png" href="http://www.clicinterieurconcepten.nl/img/morebyme-50x50.jpg"/>
+    <!-- outputs CSS files -->
     {{ this.assets.outputCss('header') }}
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <base href="index">
@@ -26,9 +29,11 @@
     </nav>
 </div>
 <article>
+    <!-- outputs the view  -->
     {% block content %}
     {% endblock %}
 </article>
+<!-- outputs JS scripts -->
 {{ this.assets.outputJs('footer') }}
 </body>
 </html>

@@ -1,6 +1,6 @@
 /*body css */
-body { background-image: url('kapper.png'); font-size: medium;  background-repeat: no-repeat;  background-size: cover;  background-attachment: fixed;  }
-* { font-family: 'Indie Flower', cursive; }
+body { background-image: url('kapper.png'); font-size: medium;  background-repeat: no-repeat;  background-size: cover;  background-attachment: fixed; }
+* {     font-family: 'EB Garamond', serif; }
 ul {  text-align: center;  }
 .header {  width: 50%; margin: 0 auto;  text-align: center;  }
 /*Buttons, anchors & icons css*/
@@ -14,37 +14,48 @@ a.waves-effect.waves-light.btn:hover {  background-color: #000;  color: #fff;  }
 #about:hover #submenu{display: block;}
 .buttons_login {  display: flex;  }
 /* label & errror*/
-label{font-size: 19px;}
-<<<<<<< HEAD
-.data-error { width: 50%;  }
-=======
+label{font-size: 23px;}
 .data-error { width: 50%;/* position: absolute; */}
->>>>>>> 0a74381cbca4aca4c4d14c302d58834b1f5e86cb
+.post-error { color: #ff4f28;}
+/* input fields */
+input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {  font-size: 23px;  }
+/* textarea */
+textarea { resize: none;}
 /* section */
 #producten { background-color: #ECE9E5;min-height: 610px;}
-#producten>article p { margin: 0 auto;font-size: 19px;width: 62%;padding-bottom: 35px;}
+#producten>article p { margin: 0 auto;font-size: 23px;width: 62%;padding-bottom: 35px;}
 #producten>article{color: #000;padding-top: 1px; text-align: center;}
 #producten{height:500px;margin-top: 180px;}
 #behandeling{ height:500px;}
 #behandeling>article{padding-top: 10px; color: #fff;}
 section {  height:auto;  width: 100%;}
 /*article css*/
-article {  color:#fff;  width: 100%; }
-#overons p {text-align: center;margin: 0 auto;font-size: 19px;width: 62%;padding-bottom: 35px;}
+article {  color:#fff;  width: 100%;}
+#overons p {text-align: center;margin: 0 auto;font-size: 23px;width: 62%;padding-bottom: 35px;}
 article li{font-size: 23px;}
 h1 {  text-align: center;font-size: 3.2rem;}
 article label,input {color:#fff;}
 /* form */
 form, table {padding: 10px;}
 form.login-form {  width: 20%;  margin: 0 auto;  }
-/* responsive css*/
-@media screen and (max-width: 980px) {  #overons p {  width: 90%;  }  .data-error { width: 100%; top:763px;}  .header {  width: 88%;  } #submenu {display: none;} #aboutus {height: auto;} .hide_row{display: none;} form.login-form {  width: 100%;}   }
-input[type="submit"]:hover {background-color: #000;  color: #fff; }
-input[type="submit"] {  background-color: #fff;  color: #000;  font-weight: bold; float: right;width: 141px;}
 /*table*/
 table.highlight > tbody > tr:hover,table.highlight > tbody > tr:hover a { color:#000;}
 /* dropdown */
 .select {display: inline-block;color: #000;margin-top: 9px;}
-
-
-
+#select {display: inline-block;color: #000;}
+/* error xdebug */
+table.xdebug-error.xe-notice {  color: black;  }
+/* google maps */
+.map {width: 40%;overflow:hidden;height:500px;color:red;margin-right: 25px;float: right;}
+#canvas-for-google-map{height:100%; width:100%;max-width:100%;}
+iframe {height:100%;width:100%;border:0;}
+.map iframe:hover{  pointer-events: auto;  }
+.map iframe{  pointer-events: none; }
+/* contact pagina */
+ul.contact {  width: 50%;float: left;}
+.contact li {  padding: 10px;  }
+/* responsive css*/
+@media screen and (max-width: 980px) {  #overons p {  width: 90%;  }  .data-error { width: 100%;  display: block;} .data-warning { width: 100%;  display: block;}  .header {  width: 88%;  } #submenu {display: none;} #aboutus {height: auto;} .hide_row{display: none;} form.login-form {  width: 100%;}   }
+input[type="submit"]:hover {background-color: #000;  color: #fff; }
+input[type="submit"] {  background-color: #fff;  color: #000;  font-weight: bold; float: right;width: 141px;}
+@media screen and (max-width: 980px) {  ul.contact {  width: 100%;  } .map {width: 96%; padding-bottom: 10px;} }

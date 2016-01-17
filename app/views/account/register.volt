@@ -1,6 +1,7 @@
 {% extends "layouts/base.volt" %}
 {% block content %}
-    <h1><h1>registreer</h1></h1>
+    <h1><h1>registreer
+        </h1></h1>
     {{ form('account/createAccount', "class":"login-form") }}
     <div class="input-field col s6">
         <label for="email">email</label>
@@ -23,6 +24,10 @@
         {{ text_field("voornaam") }}
     </div>
     <div class="input-field col s6">
+        <label for="tussenvoegsel">tussenvoegsel</label>
+        {{ text_field("tussenvoegsel") }}
+    </div>
+    <div class="input-field col s6">
         <label for="achternaam">achternaam</label>
         {{ text_field("achternaam") }}
     </div>
@@ -30,7 +35,7 @@
         <label for="telefoonnummer">telefoonnummer</label>
         {{ text_field("telefoonnummer") }}
     </div>
-    {{ submit_button('maak account') }}
+    <span class="submit">{{ submit_button('maak account') }}</span>
     <input type="hidden" name="{{ security.getTokenKey() }}" value="{{ security.getToken() }}">
     {{ end_form() }}
     {{ flash.output() }}

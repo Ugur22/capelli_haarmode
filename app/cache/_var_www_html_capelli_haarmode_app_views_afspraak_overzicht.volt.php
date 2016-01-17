@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- outputs unique title of every page -->
     <?php echo $this->tag->getTitle(); ?>
+    <!-- sets viewport to scale to mobile device -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="shortcut icon" type="image/png" href="http://www.clicinterieurconcepten.nl/img/morebyme-50x50.jpg"/>
+    <!-- outputs CSS files -->
     <?php echo $this->assets->outputCss('header'); ?>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <base href="index">
@@ -20,7 +23,7 @@
                 <li><a href="<?php echo $this->url->get('contact'); ?>">contact</a></li>
                 <li><a href="<?php echo $this->url->get('afspraak'); ?>">afspraak maken</a></li>
                 <li><a href="<?php echo $this->url->get('afspraak/overzicht'); ?>">mijn afspraken</a></li>
-                <li><a href="<?php echo $this->url->get('index/signout'); ?>">Logout</a></li>
+                <li><a href="<?php echo $this->url->get('account/signout'); ?>">Logout</a></li>
             </ul>
             <ul class="side-nav" id="mobile-demo">
                 <li><a href="<?php echo $this->url->get('index'); ?>">home</a></li>
@@ -33,13 +36,12 @@
         </div>
     </nav>
 </div>
-<!--<h1><?php echo $this->dispatcher->getActionName(); ?></h1>-->
 <article>
+    <!-- outputs the view  -->
     
 <h1>Mijn afspraken</h1>
     <div class="header">
-        <a href="<?php echo $this->url->get('afspraak'); ?>" class="waves-effect waves-light btn"><i class="small material-icons">replay</i>maak
-            een nieuwe afspraak</a>
+        <a href="<?php echo $this->url->get('afspraak'); ?>" class="waves-effect waves-light btn"><i class="small material-icons">replay</i>maak een nieuwe afspraak</a>
     </div>
     <table class="highlight">
         <thead>
@@ -57,14 +59,15 @@
                 <td><?php echo $this->escaper->escapeHtmlAttr($af->datum); ?></td>
                 <td><?php echo $this->escaper->escapeHtmlAttr($af->begintijd); ?></td>
                 <td><?php echo $this->escaper->escapeHtmlAttr($af->eindtijd); ?></td>
-                <td class="hide_row"><?php echo $this->escaper->escapeHtmlAttr($af->gebruiker->voornaam); ?></td>
-                <td class="hide_row"><?php echo $this->escaper->escapeHtmlAttr($af->behandeling->behandeling); ?></td>
+                <td class="hide_row"><?php echo Phalcon\Text::upper($this->escaper->escapeHtmlAttr($af->gebruiker->voornaam)); ?></td>
+                <td class="hide_row"><?php echo Phalcon\Text::upper($this->escaper->escapeHtmlAttr($af->behandeling->behandeling)); ?></td>
                 <td class="hide_row">€<?php echo $this->escaper->escapeHtmlAttr($af->behandeling->prijs); ?></td>
             </tr>
         <?php } ?>
     </table>
 
 </article>
+<!-- outputs JS scripts -->
 <?php echo $this->assets->outputJs('footer'); ?>
 </body>
 </html>

@@ -16,7 +16,7 @@
     <select name="behandeling_id" class="select">
      <option value="" disabled selected> kies een behandeling</option>
         {% for b in behandeling %}
-            <option value="{{ b.id }}">{{ b.behandeling }}</option>
+            <option value="{{ b.id }}">{{ b.behandeling|upper|escape }} <span> - €{{ b.prijs }}</span></option>
         {% endfor %}
     </select>
     </div>
@@ -28,7 +28,7 @@
      <option value="" disabled selected> kies een medewerker</option>
         {% for af in gebruiker %}
             {% if af.rol == "admin" %}
-                <option value="{{ af.id }}">{{ af.voornaam }}</option>
+                <option value="{{ af.id }}">{{ af.voornaam|upper|escape }}</option>
             {% endif %}
         {% endfor %}
     </select>

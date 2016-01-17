@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- outputs unique title of every page -->
     {{ get_title() }}
+    <!-- sets viewport to scale to mobile device -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="shortcut icon" type="image/png" href="http://www.clicinterieurconcepten.nl/img/morebyme-50x50.jpg"/>
-    {{ this.assets.outputCss('header')  }}
+    <!-- outputs CSS files -->
+    {{ this.assets.outputCss('header') }}
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <base href="index">
 </head>
@@ -20,7 +23,7 @@
                 <li><a href="{{ url("contact") }}">contact</a></li>
                 <li><a href="{{ url("afspraak") }}">afspraak maken</a></li>
                 <li><a href="{{ url("afspraak/overzicht") }}">mijn afspraken</a></li>
-                <li><a href="{{ url("index/signout") }}">Logout</a></li>
+                <li><a href="{{ url("account/signout") }}">Logout</a></li>
             </ul>
             <ul class="side-nav" id="mobile-demo">
                 <li><a href="{{ url("index") }}">home</a></li>
@@ -33,11 +36,12 @@
         </div>
     </nav>
 </div>
-<!--<h1>{{ dispatcher.getActionName() }}</h1>-->
 <article>
+    <!-- outputs the view  -->
     {% block content %}
     {% endblock %}
 </article>
+<!-- outputs JS scripts -->
 {{ this.assets.outputJs('footer') }}
 </body>
 </html>

@@ -12,17 +12,18 @@ class BaseController extends controller
     public function initialize()
     {
         Tag::prependTitle("Capelli Haarmode");
-
         // CSS imports
         $this->assets
+            // create collection of CSS import
             ->collection('header')
-            ->addCss('https://fonts.googleapis.com/css?family=Indie+Flower')
+            ->addCss('https://fonts.googleapis.com/css?family=EB+Garamond')
             ->addCss('css/datepicker.css')
             ->addCss('css/materialize.min.css')
             ->addCss('http://fonts.googleapis.com/icon?family=Material+Icons')
             ->addCss('css/style.css');
-        // Javascripts imports
+        // JS imports
         $this->assets
+            // create collection of JS import
             ->collection('footer')
             ->addJs('js/materialize.min.js')
             ->addJs('js/script.js')
@@ -30,14 +31,4 @@ class BaseController extends controller
             -> addJs('js/picker.date.js')
             ->addJs('js/picker.time.js');
     }
-    /*
-    public function beforeExecuteRoute()
-    {
-        if ($this->session->has("userSessionID")) {
-            $this->view->setTemplateBefore("dashboard");
-        }else{
-            $this->view->setTemplateBefore("base");
-        }
-    }
-    */
 }

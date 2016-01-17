@@ -11,6 +11,7 @@ class Behandeling  extends BaseModel
 
     public function initialize()
     {
+        // asign behandeling id to a afspraak
         $this->hasMany('id','afspraak','behandeling_id');
     }
 }

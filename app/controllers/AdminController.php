@@ -12,6 +12,7 @@ class AdminController extends BaseController
 {
     public function indexAction()
     {
+        // set a tile page
         Tag::setTitle("admin pagina");
     }
 
@@ -20,23 +21,26 @@ class AdminController extends BaseController
         Tag::setTitle("overzicht afspraken");
         $user = $this->session->get('auth');
         $rol = ($user['rol']);
-        if($rol != "admin")
-        {
+        // checks if role is admin so that only admins can access this page
+        if ($rol != "admin") {
             $this->response->redirect("account/index");
         }
+        // variable to display all appointments from the model afspraken
         $afspraak = Afspraak::find();
+        // make variable accessible for the view
         $this->view->setVar('afspraak', $afspraak);
-        $loginnaam = ($user['voornaam']);
-        $this->view->setVar("loginnaam", $loginnaam);
     }
 
     public function verwijderAction($id)
     {
+        // find id of selected appointments
         $afspraak = Afspraak::find($id);
+        // check if id exists
         if (!$afspraak) {
             echo "afspraak bestaat niet";
             die;
         }
+        // delete appointment from the table
         $result = $afspraak->delete();
         $this->response->redirect('admin/overzicht');
         if (!$result) {
@@ -46,10 +50,13 @@ class AdminController extends BaseController
 
     public function detailAction($id)
     {
+        // find id of selected appointment
         $afspraak = Afspraak::findById($id);
-       //$behandeling = Behandeling::findFirst()
+        // variable to display all users from the model Gebruiker
         $this->view->gebruiker = Gebruiker::find();
+        // variable to display all Behandelingen from the model Behandeling
         $this->view->behandeling = Behandeling::find();
+        // make variable accessible for the view
         $this->view->setVar('afspraak', $afspraak);
         $this->view->setVar('id', $id);
     }
@@ -57,32 +64,38 @@ class AdminController extends BaseController
     public function wijzigAction()
     {
         if ($this->request->isPost()) {
+            // get the value form input fields
             $begintijd = $this->request->getPost("begintijd");
             $id = $this->request->getPost("id");
             $datum = $this->request->getPost("datum");
-            $behandeling = $this->request->getPost("behandeling_id");
             $medewerker = $this->request->getPost("gebruiker_id");
+            $behandeling = $this->request->getPost("behandeling_id");
+            // check for duplicate appointments
             $checkafspraak = Afspraak::findFirst([
-                "begintijd = :begintijd: AND datum = :datum: AND gebruiker_id = :gebruiker_id:",
+                "begintijd = :begintijd: AND datum = :datum: AND gebruiker_id = :gebruiker_id: AND id != :id:",
                 "bind" => [
                     "begintijd" => $begintijd,
                     "datum" => $datum,
-                    "gebruiker_id" => $medewerker
+                    "gebruiker_id" => $medewerker,
+                    "id" => $id
                 ]
             ]);
             if ($checkafspraak) {
-                $this->response->redirect('admin/detail?detail=' . $id);
+                // display message  appointment already taken
+                $this->response->redirect('admin/detail/' . $id);
                 $this->flash->error("deze combiniatie van datum, begintijd en medewerker is al bezet");
             } else {
                 $afspraak = Afspraak::findFirstById($id);
                 if (!$afspraak) {
-                    echo "user does not exist";
+                    echo "afspraak does not exist";
                     die;
                 }
+                // set input values equal to a row in the table
                 $afspraak->datum = $datum;
                 $afspraak->begintijd = $begintijd;
                 $afspraak->behandeling_id = $behandeling;
                 $afspraak->gebruiker_id = $medewerker;
+                // update selected appointment
                 $result = $afspraak->update();
                 if (!$result) {
                     $output = [];
@@ -90,8 +103,9 @@ class AdminController extends BaseController
                         $output[] = $message;
                     }
                     $output = implode("<br><br>", $output);
+                    // display invalid input form user
                     $this->flash->error($output);
-                    $this->response->redirect('afspraak/index');
+                    $this->response->redirect('admin/detail/' . $id);
                     return;
                 }
                 $this->response->redirect('admin/overzicht');

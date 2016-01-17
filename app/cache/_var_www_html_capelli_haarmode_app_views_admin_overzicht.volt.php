@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- outputs unique title of every page -->
     <?php echo $this->tag->getTitle(); ?>
+    <!-- sets viewport to scale to mobile device -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="shortcut icon" type="image/png" href="http://www.clicinterieurconcepten.nl/img/morebyme-50x50.jpg"/>
+    <!-- outputs CSS files -->
     <?php echo $this->assets->outputCss('header'); ?>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <base href="index">
@@ -26,12 +29,10 @@
     </nav>
 </div>
 <article>
+    <!-- outputs the view  -->
     
 <h1>Overzicht afspraken</h1>
-    <h1><?php echo $loginnaam; ?></h1>
 <div class="header">
-    <a href="<?php echo $this->url->get('afspraak'); ?>" class="waves-effect waves-light btn"><i class="small material-icons">replay</i>maak
-        een nieuwe afspraak</a>
 </div>
 <table class="highlight">
     <thead>
@@ -44,7 +45,7 @@
         <th class="hide_row">behandeling</th>
         <th class="hide_row">prijs</th>
         <th>details</th>
-        <th class="hide_row">delete</th>
+        <th>delete</th>
     </tr>
     </thead>
     <?php foreach ($afspraak as $af) { ?>
@@ -57,12 +58,13 @@
             <td class="hide_row"><?php echo $this->escaper->escapeHtmlAttr($af->behandeling->behandeling); ?></td>
             <td class="hide_row">€<?php echo $this->escaper->escapeHtmlAttr($af->behandeling->prijs); ?></td>
             <td><a href="<?php echo $this->url->get('admin/detail/' . $this->escaper->escapeHtmlAttr($af->id)); ?>"><i class="small material-icons">info</i></a></td>
-            <td class="hide_row"><a href="<?php echo $this->url->get('admin/verwijder/' . $this->escaper->escapeHtmlAttr($af->id)); ?>"><i class="small material-icons">delete</i></a></td>
+            <td><a href="<?php echo $this->url->get('admin/verwijder/' . $this->escaper->escapeHtmlAttr($af->id)); ?>"><i class="small material-icons">delete</i></a></td>
         </tr>
     <?php } ?>
 </table>
 
 </article>
+<!-- outputs JS scripts -->
 <?php echo $this->assets->outputJs('footer'); ?>
 </body>
 </html>

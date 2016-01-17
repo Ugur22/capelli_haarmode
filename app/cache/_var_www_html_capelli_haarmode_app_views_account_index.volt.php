@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- outputs unique title of every page -->
     <?php echo $this->tag->getTitle(); ?>
+    <!-- sets viewport to scale to mobile device -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="shortcut icon" type="image/png" href="http://www.clicinterieurconcepten.nl/img/morebyme-50x50.jpg"/>
+    <!-- outputs CSS files -->
     <?php echo $this->assets->outputCss('header'); ?>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <base href="index">
@@ -29,45 +32,31 @@
         </div>
     </nav>
 </div>
-<!--<h1><?php echo $this->dispatcher->getActionName(); ?></h1>-->
 <article>
+    <!-- outputs the view  -->
     
-    <h1><h1>registreer</h1></h1>
-    <?php echo $this->tag->form(array('account/createAccount', 'class' => 'login-form')); ?>
-    <div class="input-field col s6">
-        <label for="email">email</label>
+    <h1>Login</h1>
+    <?php echo $this->tag->form(array('account/login', 'class' => 'login-form')); ?>
+    <p>
+        <label for="email">email/username</label>
         <?php echo $this->tag->textField(array('email')); ?>
-    </div>
-    <div class="input-field col s6">
-        <label for="username">username</label>
-        <?php echo $this->tag->textField(array('username')); ?>
-    </div>
-    <div class="input-field col s6">
+    </p>
+    <p>
         <label for="password">password:</label>
         <?php echo $this->tag->passwordfield('password'); ?>
-    </div>
-    <div class="input-field col s6">
-        <label for="confirm_password">herhaal password:</label>
-        <?php echo $this->tag->passwordfield('confirm_password'); ?>
-    </div>
-    <div class="input-field col s6">
-        <label for="voornaam">voornaam</label>
-        <?php echo $this->tag->textField(array('voornaam')); ?>
-    </div>
-    <div class="input-field col s6">
-        <label for="achternaam">achternaam</label>
-        <?php echo $this->tag->textField(array('achternaam')); ?>
-    </div>
-    <div class="input-field col s6">
-        <label for="telefoonnummer">telefoonnummer</label>
-        <?php echo $this->tag->textField(array('telefoonnummer')); ?>
-    </div>
-    <?php echo $this->tag->submitButton(array('maak account')); ?>
-    <input type="hidden" name="<?php echo $this->security->getTokenKey(); ?>" value="<?php echo $this->security->getToken(); ?>">
+    </p>
+    <p>
+        <div class="buttons_login">
+        <a href="<?php echo $this->url->get('account/register'); ?>" class="waves-effect waves-light btn">registreer</a>
+        <?php echo $this->tag->submitButton(array('login')); ?>
+        <input type="hidden" name="<?php echo $this->security->getTokenKey(); ?>" value="<?php echo $this->security->getToken(); ?>">
+        </div>
+    </p>
     <?php echo $this->tag->endForm(); ?>
     <?php echo $this->flash->output(); ?>
 
 </article>
+<!-- outputs JS scripts -->
 <?php echo $this->assets->outputJs('footer'); ?>
 </body>
 </html>

@@ -3,7 +3,7 @@
     <h1>Login</h1>
     {{ form('account/login', "class":"login-form") }}
     <p>
-        <label for="email">email</label>
+        <label for="email">email/username</label>
         {{ text_field("email") }}
     </p>
     <p>

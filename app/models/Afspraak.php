@@ -12,12 +12,15 @@ class Afspraak extends BaseModel
 {
     public function initialize()
     {
+        // assign behandeling table to afspraak table through a foreign key
         $this->belongsTo('behandeling_id', 'Behandeling', 'id', ['alias' => 'behandeling', 'reusable' => true]);
+        // assign } table to afspraak table through a foreign key
         $this->belongsTo('gebruiker_id', 'Gebruiker', 'id', ['alias' => 'gebruiker', 'reusable' => true]);
     }
 
     public function validation()
     {
+        // checks if fields in afspraken page has an empty value
         $this->validate(new  Validator\PresenceOf([
             'field' => 'behandeling_id',
             'message' => 'U heeft geen behandeling gekozen'

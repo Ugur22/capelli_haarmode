@@ -19,7 +19,7 @@
     <select name="behandeling_id" class="select">
      <option value=""> kies een behandeling</option>
         {% for b in behandeling %}
-            <option value="{{ b.id | escape_attr }}">{{ b.behandeling | escape_attr }}</option>
+            <option {% for af in afspraak %} {% if af.behandeling.id == b.id %} selected  {% endif %} {% endfor %} value="{{ b.id | escape_attr }}">{{ b.behandeling | escape_attr }}</option>
         {% endfor %}
     </select>
     </div>
@@ -31,7 +31,7 @@
      <option value=""  > kies een medewerker</option>
         {% for af in gebruiker %}
             {% if af.rol == "admin" %}
-                <option value="{{ af.id | escape_attr }}">{{ af.voornaam | escape_attr }}</option>
+                <option {% for afs in afspraak %} {% if afs.gebruiker.id == af.id %} selected  {% endif %} {% endfor %}  value="{{ af.id | escape_attr }}">{{ af.voornaam | escape_attr }}</option>
             {% endif %}
         {% endfor %}
     </select>

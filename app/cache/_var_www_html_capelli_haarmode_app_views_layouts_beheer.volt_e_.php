@@ -1,9 +1,12 @@
-a:3:{i:0;s:1249:"<!DOCTYPE html>
+a:3:{i:0;s:1412:"<!DOCTYPE html>
 <html>
 <head>
+    <!-- outputs unique title of every page -->
     <?php echo $this->tag->getTitle(); ?>
+    <!-- sets viewport to scale to mobile device -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="shortcut icon" type="image/png" href="http://www.clicinterieurconcepten.nl/img/morebyme-50x50.jpg"/>
+    <!-- outputs CSS files -->
     <?php echo $this->assets->outputCss('header'); ?>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <base href="index">
@@ -26,9 +29,11 @@ a:3:{i:0;s:1249:"<!DOCTYPE html>
     </nav>
 </div>
 <article>
+    <!-- outputs the view  -->
     ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:5:"
-    ";s:4:"file";s:53:"/var/www/html/gurucoder/app/views/layouts/beheer.volt";s:4:"line";i:30;}}i:1;s:76:"
+    ";s:4:"file";s:60:"/var/www/html/capelli_haarmode/app/views/layouts/beheer.volt";s:4:"line";i:34;}}i:1;s:104:"
 </article>
+<!-- outputs JS scripts -->
 <?php echo $this->assets->outputJs('footer'); ?>
 </body>
 </html>";}

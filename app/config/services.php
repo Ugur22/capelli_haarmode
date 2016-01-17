@@ -98,7 +98,7 @@ $di->set('flash', function () {
         'error' => 'data-error',
         'success' => 'data-success',
         'notice' => 'data-error',
-        'warning' => 'data-errors'
+        'warning' => 'data-warning'
     ]);
     return $flash;
 });
