@@ -5,9 +5,9 @@ $(document).ready(function () {
     $('.submit input').on('click', validate);
     var options = [{
         selector: '#holder',
-        offset: 50,
+        offset: 120,
         callback: 'Materialize.showStaggeredList("#holder")'
-    }, {selector: '#holder_product', offset: 70, callback: 'Materialize.fadeInImage("#holder_product")'}];
+    }, {selector: '#holder_product', offset: 120, callback: 'Materialize.fadeInImage("#holder_product")'}];
     Materialize.scrollFire(options);
     console.log(options);
 

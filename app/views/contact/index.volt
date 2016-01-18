@@ -1,6 +1,8 @@
 {% extends "layouts/base.volt" %}
 {% block content %}
+    <div class="page_title">
     <h1>Contact</h1>
+    </div>
     <ul class="contact">
         <img src="img/capelli_logo.png" alt="Capelli-Haarmode">
     </ul>

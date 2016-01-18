@@ -18,36 +18,38 @@ label{font-size: 23px;}
 .data-error { width: 50%;/* position: absolute; */}
 .post-error { color: #ff4f28;}
 /* input fields */
-input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {  font-size: 23px;  }
+input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date],
+input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {  font-size: 23px;  }
 /* textarea */
 textarea { resize: none;}
 /* section */
 article h1 {  padding-top: 20px;  }
+.page_title h1{color:#fff;}
 #producten { background-color: #ECE9E5;min-height: 610px;}
 #producten>article p { margin: 0 auto;font-size: 23px;width: 62%;padding-bottom: 35px;}
 #producten>article{color: #000;padding-top: 1px; text-align: center;}
-#producten{height: auto;margin-top: 180px;}
+#producten{height: auto;margin-top: 180px;padding-bottom: 23px;}
 #behandeling{ background-color: #ECE9E5;min-height: 610px;}
 #behandeling>article{padding-top: 10px;color: #000;}
 .behandelingen>li {display: inline-block;}
 .col.s12.m7 {  width: 32%;  margin-top: 13px;}
 #holder_product{opacity: 0;}
-
+.card .card-image img {  padding-top: 113px;  }
 #holder_product>.col.s12.m7 .card-content{  height: 500px;  }
 .card .card-content p {  color: #727272;  height: 100px; padding-bottom: 5px;  }
 #behandelingen .card-content{  height: 200px;  }
 #behandelingen {opacity: 0;}
-.row {  margin: 0 auto;  width: 90%;  }
+.row {  margin: 0 auto;width: 90%;}
 section {  height:auto;  width: 100%;}
 #home article{height: 800px;color: #fff;}
 /*article css*/
 #home>article {  color:#fff;  width: 100%;}
-#overons p {text-align: center;margin: 0 auto;font-size: 23px;width: 62%;padding-bottom: 35px;}
+#overons p {text-align: center;margin: 0 auto;color: #fff;font-size: 23px;width: 62%;padding-bottom: 35px;}
 article li{font-size: 23px;}
 h1 {  text-align: center;font-size: 3.2rem;}
 article label,input {color:#fff;}
 /* form */
-form, table {padding: 10px;}
+form, table {padding: 10px;color: #fff;}
 form.login-form {  width: 20%;  margin: 0 auto;  }
 /*table*/
 table.highlight > tbody > tr:hover,table.highlight > tbody > tr:hover a { color:#000;}
@@ -69,7 +71,10 @@ ul.contact {  width: 50%;float: left;}
 /* logo */
 img#logo {  width: 300px;  height: 100%;  }
 /* responsive css*/
-@media screen and (max-width: 980px) {  #overons p {  width: 90%;  } .col.s12.m7 {  width: 100%;  margin-top: 13px;}  td, th {  font-size: 20px;  } .data-error { width: 100%;  display: block;} .data-warning { width: 100%;  display: block;}  .header {  width: 88%;  } #submenu {display: none;} #aboutus {height: auto;} .hide_row{display: none;} form.login-form {  width: 100%;}   }
+@media screen and (max-width: 980px) {  #overons p {  width: 90%;  } .col.s12.m7 {  width: 100%;  margin-top: 13px;}
+    #holder_product>.col.s12.m7 .card-content {height: auto;}  td, th {  font-size: 20px;  }
+    .data-error { width: 100%;  display: block;} .data-warning { width: 100%;  display: block;}  .header {  width: 88%;  } #submenu {display: none;}
+    #aboutus {height: auto;} .hide_row{display: none;} form.login-form {  width: 100%;}   }
 input[type="submit"]:hover {background-color: #000;  color: #fff; }
 input[type="submit"] {  background-color: #fff;  color: #000;  font-weight: bold; float: right;width: 141px;}
 @media screen and (max-width: 980px) {  ul.contact {  width: 100%;  } .map {width: 96%; padding-bottom: 10px;} }

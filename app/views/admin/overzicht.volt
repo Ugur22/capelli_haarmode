@@ -1,8 +1,8 @@
 {% extends "layouts/beheer.volt" %}
 {% block content %}
+<div class="page_title">
 <h1>Overzicht afspraken</h1>
-<div class="header">
-</div>
+    </div>
 <table class="highlight">
     <thead>
     <tr>

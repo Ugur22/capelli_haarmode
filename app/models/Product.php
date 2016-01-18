@@ -8,26 +8,26 @@
  */
 class product extends BaseModel
 {
-    public $id;
-    public $naam;
-    public $beschrijving;
-    public $img;
+    private $id;
+    private $naam;
+    private $beschrijving;
+    private $img;
 
     public function getId()
     {
         return $this->id;
     }
-    public function getnaam()
+    public function getNaam()
     {
         return $this->naam;
     }
 
-    public function getbeschrijving()
+    public function getBeschrijving()
     {
         return $this->beschrijving;
     }
 
-    public function getimg()
+    public function getImg()
     {
         return $this->img;
     }

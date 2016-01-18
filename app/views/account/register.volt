@@ -1,7 +1,9 @@
 {% extends "layouts/base.volt" %}
 {% block content %}
-    <h1><h1>registreer
-        </h1></h1>
+    <div class="page_title">
+        <h1>registreer
+        </h1>
+    </div>
     {{ form('account/createAccount', "class":"login-form") }}
     <div class="input-field col s6">
         <label for="email">email</label>

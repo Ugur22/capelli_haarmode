@@ -11,47 +11,47 @@ use \Phalcon\Mvc\Model\Validator,
 
 class Gebruiker extends BaseModel
 {
-    public $id;
-    public $username;
-    public $password;
-    public $voornaam;
-    public $tussenvoegsel;
-    public $achternaam;
-    public $email;
-    public $telefoonnummer;
-    public $rol;
+    private $id;
+    private $username;
+    private $password;
+    private $voornaam;
+    private $tussenvoegsel;
+    private $achternaam;
+    private $email;
+    private $telefoonnummer;
+    private $rol;
 
     public function getId()
     {
         return $this->id;
     }
 
-    public function getusername()
+    public function getUsername()
     {
         return $this->username;
     }
 
-    public function getpassword()
+    public function getPassword()
     {
         return $this->password;
     }
 
-    public function getvoornaam()
+    public function getVoornaam()
     {
         return $this->voornaam;
     }
 
-    public function gettussenvoegsel()
+    public function getTussenvoegsel()
     {
         return $this->tussenvoegsel;
     }
 
-    public function gettelefoonnummer()
+    public function getTelefoonnummer()
     {
         return $this->telefoonnummer;
     }
 
-    public function getrol()
+    public function getRol()
     {
         return $this->rol;
     }

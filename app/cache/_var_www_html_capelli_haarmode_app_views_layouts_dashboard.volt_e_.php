@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+a:3:{i:0;s:2130:"<!DOCTYPE html>
 <html>
 <head>
     <!-- outputs unique title of every page -->
@@ -14,52 +14,34 @@
 <body>
 <div class="navbar-fixed">
     <nav>
-        <div class="nav-wrapper"><span class="brand-logo right">Capelli Haarmode</span>
+        <div class="nav-wrapper">
+            <span class="brand-logo right">Capelli Haarmode</span>
             <a href="" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="left hide-on-med-and-down">
                 <li><a   href="<?php echo $this->url->get('index'); ?>">home</a></li>
                 <li id="about"><a href="<?php echo $this->url->get('overons'); ?>">over ons</a></li>
                 <li><a href="<?php echo $this->url->get('contact'); ?>">contact</a></li>
-                <li><a href="<?php echo $this->url->get('account'); ?>">Login</a></li>
+                <li><a href="<?php echo $this->url->get('afspraak'); ?>">afspraak maken</a></li>
+                <li><a href="<?php echo $this->url->get('afspraak/overzicht'); ?>">mijn afspraken</a></li>
+                <li><a href="<?php echo $this->url->get('account/signout'); ?>">Logout</a></li>
             </ul>
             <ul class="side-nav" id="mobile-demo">
                 <li><a href="<?php echo $this->url->get('index'); ?>">home</a></li>
                 <li><a href="<?php echo $this->url->get('overons'); ?>">over ons</a></li>
                 <li><a href="<?php echo $this->url->get('contact'); ?>">contact</a></li>
-                <li><a href="<?php echo $this->url->get('account'); ?>">Login</a></li>
+                <li><a href="<?php echo $this->url->get('afspraak'); ?>">afspraak maken</a></li>
+                <li><a href="<?php echo $this->url->get('afspraak/overzicht'); ?>">mijn afspraken</a></li>
+                <li><a href="<?php echo $this->url->get('account/signout'); ?>">Logout</a></li>
             </ul>
         </div>
     </nav>
 </div>
 <article>
     <!-- outputs the view  -->
-    
-    <div class="page_title">
-        <h1>Over ons</h1>
-    </div>
-<section id="overons">
-    <p>
-       Capelli Haarmode innoveert op het gebied van haarmode
-    </p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-        aute irure dolor
-        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-        cupidatat non proident,
-        sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
-    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-        aute irure dolor
-        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-        cupidatat non proident,
-        sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-</section>
-
+    ";s:7:"content";a:1:{i:0;a:4:{s:4:"type";i:357;s:5:"value";s:5:"
+    ";s:4:"file";s:63:"/var/www/html/capelli_haarmode/app/views/layouts/dashboard.volt";s:4:"line";i:42;}}i:1;s:104:"
 </article>
 <!-- outputs JS scripts -->
 <?php echo $this->assets->outputJs('footer'); ?>
 </body>
-</html>
+</html>";}

@@ -1,6 +1,8 @@
 {% extends "layouts/base.volt" %}
 {% block content %}
-<h1>Over ons</h1>
+    <div class="page_title">
+        <h1>Over ons</h1>
+    </div>
 <section id="overons">
     <p>
        Capelli Haarmode innoveert op het gebied van haarmode

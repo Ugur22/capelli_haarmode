@@ -10,14 +10,14 @@ use \Phalcon\Mvc\Model\Validator,
  */
 class Afspraak extends BaseModel
 {
-    public $id;
-    public $klant;
-    public $begintijd;
-    public $eindtijd;
-    public $datum;
-    public $gebruiker_id;
-    public $klant_id;
-    public $behandeling_id;
+    private $id;
+    private $klant;
+    private $begintijd;
+    private $eindtijd;
+    private $datum;
+    private $gebruiker_id;
+    private $klant_id;
+    private $behandeling_id;
 
 
     public function getId()
@@ -25,37 +25,37 @@ class Afspraak extends BaseModel
         return $this->id;
     }
 
-    public function getklant()
+    public function getKlant()
     {
         return $this->klant;
     }
 
-    public function getbegintijd()
+    public function getBegintijd()
     {
         return $this->begintijd;
     }
 
-    public function geteindtijd()
+    public function getEindtijd()
     {
         return $this->eindtijd;
     }
 
-    public function getdatum()
+    public function getDatum()
     {
         return $this->datum;
     }
 
-    public function getgebruikers_id()
+    public function getGebruiker_id()
     {
         return $this->gebruiker_id;
     }
 
-    public function getklant_id()
+    public function getKlant_id()
     {
         return $this->klant_id;
     }
 
-    public function getbehandeling()
+    public function getBehandeling()
     {
         return $this->behandeling_id;
     }

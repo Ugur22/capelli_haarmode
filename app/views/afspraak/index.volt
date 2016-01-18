@@ -1,6 +1,8 @@
 {% extends "layouts/dashboard.volt" %}
 {% block content %}
+    <div class="page_title">
 <h1>Maak een afspraak</h1>
+    </div>
 {{ form('afspraak/toevoegen') }}
 <p>
     <label for="datum">datum</label>

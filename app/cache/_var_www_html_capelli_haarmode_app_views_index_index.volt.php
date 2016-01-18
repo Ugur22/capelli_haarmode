@@ -79,26 +79,25 @@
         </div>
     </section>
     <section class="parallax-container">
-        <div class="parallax"><img
-                    src="http://i0.wp.com/prkapper.nl/wp-content/uploads/PR-Kapper-Soest-interieur-wassen.jpg"></div>
+        <div class="parallax"><img src="../img/foto.jpg"></div>
     </section>
     <section id="behandeling">
         <article>
             <h1>behandelingen</h1>
-                <ul class="row" id="holder">
-                    <?php foreach ($behandeling as $b) { ?>
-                        <li class="col s12 m7" id="behandelingen">
-                            <div class="card">
-                                <div class="card-content">
-                                    <span class="card-title"><?php echo $b->behandeling; ?></span>
-                                    <p>&euro;<?php echo $b->prijs; ?></p>
-                                </div>
-                                <div class="card-action">
-                                </div>
+            <ul class="row" id="holder">
+                <?php foreach ($behandeling as $b) { ?>
+                    <li class="col s12 m7" id="behandelingen">
+                        <div class="card">
+                            <div class="card-content">
+                                <span class="card-title"><?php echo $b->behandeling; ?></span>
+                                <p>&euro;<?php echo $b->prijs; ?></p>
                             </div>
-                        </li>
-                    <?php } ?>
-                </ul>
+                            <div class="card-action">
+                            </div>
+                        </div>
+                    </li>
+                <?php } ?>
+            </ul>
         </article>
     </section>
     </body>

@@ -1,6 +1,8 @@
 {% extends "layouts/dashboard.volt" %}
 {% block content %}
+    <div class="page_title">
 <h1>Mijn afspraken</h1>
+    </div>
     <div class="header">
         <a href="{{ url("afspraak") }}" class="waves-effect waves-light btn"><i class="small material-icons">replay</i>maak een nieuwe afspraak</a>
     </div>

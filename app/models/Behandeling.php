@@ -8,21 +8,21 @@
  */
 class Behandeling  extends BaseModel
 {
-    public $id;
-    public $behandeling;
-    public $prijs;
+    private $id;
+    private $behandeling;
+    private $prijs;
 
     public function getId()
     {
         return $this->id;
     }
 
-    public function getbehandeling()
+    public function getBehandeling()
     {
         return $this->behandeling;
     }
 
-    public function getprijs()
+    public function getPrijs()
     {
         return $this->prijs;
     }
