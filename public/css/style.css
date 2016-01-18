@@ -33,6 +33,7 @@ article h1 {  padding-top: 20px;  }
 #behandeling>article{padding-top: 10px;color: #000;}
 .behandelingen>li {display: inline-block;}
 .col.s12.m7 {  width: 32%;  margin-top: 13px;}
+ul#holder_product {  margin: 0 auto;  }
 #holder_product{opacity: 0;}
 .card .card-image img {  padding-top: 113px;  }
 #holder_product>.col.s12.m7 .card-content{  height: 500px;  }
