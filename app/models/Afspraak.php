@@ -10,6 +10,57 @@ use \Phalcon\Mvc\Model\Validator,
  */
 class Afspraak extends BaseModel
 {
+    public $id;
+    public $klant;
+    public $begintijd;
+    public $eindtijd;
+    public $datum;
+    public $gebruiker_id;
+    public $klant_id;
+    public $behandeling_id;
+
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function getklant()
+    {
+        return $this->klant;
+    }
+
+    public function getbegintijd()
+    {
+        return $this->begintijd;
+    }
+
+    public function geteindtijd()
+    {
+        return $this->eindtijd;
+    }
+
+    public function getdatum()
+    {
+        return $this->datum;
+    }
+
+    public function getgebruikers_id()
+    {
+        return $this->gebruiker_id;
+    }
+
+    public function getklant_id()
+    {
+        return $this->klant_id;
+    }
+
+    public function getbehandeling()
+    {
+        return $this->behandeling_id;
+    }
+
+
     public function initialize()
     {
         // assign behandeling table to afspraak table through a foreign key

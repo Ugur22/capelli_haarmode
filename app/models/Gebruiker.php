@@ -11,6 +11,52 @@ use \Phalcon\Mvc\Model\Validator,
 
 class Gebruiker extends BaseModel
 {
+    public $id;
+    public $username;
+    public $password;
+    public $voornaam;
+    public $tussenvoegsel;
+    public $achternaam;
+    public $email;
+    public $telefoonnummer;
+    public $rol;
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function getusername()
+    {
+        return $this->username;
+    }
+
+    public function getpassword()
+    {
+        return $this->password;
+    }
+
+    public function getvoornaam()
+    {
+        return $this->voornaam;
+    }
+
+    public function gettussenvoegsel()
+    {
+        return $this->tussenvoegsel;
+    }
+
+    public function gettelefoonnummer()
+    {
+        return $this->telefoonnummer;
+    }
+
+    public function getrol()
+    {
+        return $this->rol;
+    }
+
+
     public function initialize()
     {
         //assign gebruiker id to a afspraak

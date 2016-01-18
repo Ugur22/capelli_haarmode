@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- outputs unique title of every page -->
     <?php echo $this->tag->getTitle(); ?>
+    <!-- sets viewport to scale to mobile device -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="shortcut icon" type="image/png" href="http://www.clicinterieurconcepten.nl/img/morebyme-50x50.jpg"/>
+    <link rel="shortcut icon" type="image/png" href="img/capelli_logo.png"/>
+    <!-- outputs CSS files -->
     <?php echo $this->assets->outputCss('header'); ?>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <base href="index">
@@ -11,8 +14,7 @@
 <body>
 <div class="navbar-fixed">
     <nav>
-        <div class="nav-wrapper">
-            <span class="brand-logo right">Capelli Haarmode</span>
+        <div class="nav-wrapper"><span class="brand-logo right">Capelli Haarmode</span>
             <a href="" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="left hide-on-med-and-down">
                 <li><a   href="<?php echo $this->url->get('index'); ?>">home</a></li>
@@ -29,32 +31,13 @@
         </div>
     </nav>
 </div>
-<!--<h1><?php echo $this->dispatcher->getActionName(); ?></h1>-->
 <article>
+    <!-- outputs the view  -->
     
-<!--
-    <div class="parallax-container">
-        <div class="parallax"><img src="http://reinkenstraat.nl/wp-content/uploads/2013/11/van-hot-naar-hair-reinkenstraat.jpg"></div>
-    </div>
-    <div class="section white">
-        <div class="row container">
-            <h2 class="header">Parallax</h2>
-            <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
-        </div>
-    </div>
-    <div class="parallax-container">
-        <div class="parallax"><img src="http://i0.wp.com/prkapper.nl/wp-content/uploads/PR-Kapper-Soest-interieur-wassen.jpg"></div>
-    </div>-->
 <h1>Over ons</h1>
 <section id="overons">
     <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-        aute irure dolor
-        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-        cupidatat non proident,
-        sunt in culpa qui officia deserunt mollit anim id est laborum.
+       Capelli Haarmode innoveert op het gebied van haarmode
     </p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua.
@@ -72,18 +55,9 @@
         cupidatat non proident,
         sunt in culpa qui officia deserunt mollit anim id est laborum</p>
 </section>
-<!--
-<ul class="collapsible popout" data-collapsible="accordion">
-<?php foreach ($user as $video) { ?>
-        <li>
-            <div class="collapsible-header"><i class="material-icons">filter_drama</i><a href="video/<?php echo $video->permalink; ?>"><?php echo $video->name; ?></a></div>
-            <div class="collapsible-body"><?php echo $video->embedCode; ?></div>
-        </li>
-<?php } ?>
-</ul>
--->
 
 </article>
+<!-- outputs JS scripts -->
 <?php echo $this->assets->outputJs('footer'); ?>
 </body>
 </html>

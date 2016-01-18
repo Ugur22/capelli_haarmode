@@ -58,7 +58,7 @@ class AfspraakController extends BaseController
                 $volledigenaam_spaces = $voornaam . " " . $tussenvoegsel . " " . $achternaam;
                 // store values in a variable
                 $afspraak = new Afspraak();
-                $afspraak->begintijd = $begintijd;
+                $afspraak->begintijd= $begintijd;
                 $afspraak->eindtijd = $eindtijd;
                 $afspraak->datum = $datum;
                 $afspraak->klant_id = $id;

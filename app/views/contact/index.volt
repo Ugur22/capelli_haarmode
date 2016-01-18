@@ -2,10 +2,7 @@
 {% block content %}
     <h1>Contact</h1>
     <ul class="contact">
-        <li>Capelli Haarmode</li>
-        <li> Adres: Vrouwjuttenland 6</li>
-        <li>Postcode: 2611 LC DELFT</li>
-        <li>tel: 015 2136747</li>
+        <img src="img/capelli_logo.png" alt="Capelli-Haarmode">
     </ul>
     <div class="map">
         <div id="canvas-for-google-map">

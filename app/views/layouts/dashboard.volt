@@ -5,7 +5,7 @@
     {{ get_title() }}
     <!-- sets viewport to scale to mobile device -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="shortcut icon" type="image/png" href="http://www.clicinterieurconcepten.nl/img/morebyme-50x50.jpg"/>
+    <link rel="shortcut icon" type="image/png" href="img/capelli_logo.png"/>
     <!-- outputs CSS files -->
     {{ this.assets.outputCss('header') }}
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>

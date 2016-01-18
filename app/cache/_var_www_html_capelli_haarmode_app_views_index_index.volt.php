@@ -5,7 +5,7 @@
     <?php echo $this->tag->getTitle(); ?>
     <!-- sets viewport to scale to mobile device -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="shortcut icon" type="image/png" href="http://www.clicinterieurconcepten.nl/img/morebyme-50x50.jpg"/>
+    <link rel="shortcut icon" type="image/png" href="img/capelli_logo.png"/>
     <!-- outputs CSS files -->
     <?php echo $this->assets->outputCss('header'); ?>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -14,8 +14,7 @@
 <body>
 <div class="navbar-fixed">
     <nav>
-        <div class="nav-wrapper">
-            <span class="brand-logo right">Capelli Haarmode</span>
+        <div class="nav-wrapper"><span class="brand-logo right">Capelli Haarmode</span>
             <a href="" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="left hide-on-med-and-down">
                 <li><a   href="<?php echo $this->url->get('index'); ?>">home</a></li>
@@ -35,34 +34,74 @@
 <article>
     <!-- outputs the view  -->
     
-<section id="#home">
-    <article>
-        <div class="header">
-            <h1>Knippen zonder wachten!</h1>
-            <a href="<?php echo $this->url->get('afspraak'); ?>" class="waves-effect waves-light btn">maak afspraak</a>
-            <h3>Openingstijden</h3>
+    <section id="home">
+        <section class="parallax-container">
+            <article>
+                <div class="header">
+                    <h1>Knippen zonder wachten!</h1>
+                    <a href="<?php echo $this->url->get('afspraak'); ?>" class="waves-effect waves-light btn">maak afspraak</a>
+                    <h3>Openingstijden</h3>
+                </div>
+                <ul>
+                    <li> maandag - gesloten</li>
+                    <li> Dinsdag - 09:00 t/m 18:00</li>
+                    <li> Woensdag - 09:00 t/m 18:00</li>
+                    <li>Donderdag - 09:00 t/m 18:00</li>
+                    <li>Vrijdag - 09:00 t/m 18:00</li>
+                    <li>Zaterdag - 09:00 t/m 16:00</li>
+                    <li>Zondag - gesloten</li>
+                </ul>
+            </article>
+        </section>
+    </section>
+    <section id="producten">
+        <div class="row container">
+            <article>
+                <h1>Producten</h1>
+                <ul class="row" id="holder_product">
+                    <?php foreach ($product as $p) { ?>
+                        <li class="col s12 m7">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title"><?php echo $p->naam; ?></span>
+                                    <p><?php echo $p->beschrijving; ?></p>
+                                    <div class="card-image">
+                                        <img src="../img/<?php echo $p->img; ?>">
+                                    </div>
+                                </div>
+                                <div class="card-action">
+                                </div>
+                            </div>
+                        </li>
+                    <?php } ?>
+                </ul>
+            </article>
         </div>
-        <ul>
-            <li> maandag - gesloten</li>
-            <li> Dinsdag - 09:00 t/m 18:00</li>
-            <li> Woensdag - 09:00 t/m 18:00</li>
-            <li>Donderdag - 09:00 t/m 18:00</li>
-            <li>Vrijdag - 09:00 t/m 18:00</li>
-            <li>Zaterdag - 09:00 t/m 16:00</li>
-            <li>Zondag - gesloten</li>
-        </ul>
-    </article>
-</section>
-<section id="producten">
-    <article>
-        <h1>Producten</h1>
-    </article>
-</section >
-<section id="behandeling">
-    <article>
-        <h1>behandelingen</h1>
-    </article>
-</section >
+    </section>
+    <section class="parallax-container">
+        <div class="parallax"><img
+                    src="http://i0.wp.com/prkapper.nl/wp-content/uploads/PR-Kapper-Soest-interieur-wassen.jpg"></div>
+    </section>
+    <section id="behandeling">
+        <article>
+            <h1>behandelingen</h1>
+                <ul class="row" id="holder">
+                    <?php foreach ($behandeling as $b) { ?>
+                        <li class="col s12 m7" id="behandelingen">
+                            <div class="card">
+                                <div class="card-content">
+                                    <span class="card-title"><?php echo $b->behandeling; ?></span>
+                                    <p>&euro;<?php echo $b->prijs; ?></p>
+                                </div>
+                                <div class="card-action">
+                                </div>
+                            </div>
+                        </li>
+                    <?php } ?>
+                </ul>
+        </article>
+    </section>
+    </body>
 
 </article>
 <!-- outputs JS scripts -->
