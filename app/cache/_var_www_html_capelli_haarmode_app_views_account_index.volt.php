@@ -34,7 +34,9 @@
 <article>
     <!-- outputs the view  -->
     
+<div class="page_title">
     <h1>Login</h1>
+    </div>
     <?php echo $this->tag->form(array('account/login', 'class' => 'login-form')); ?>
     <p>
         <label for="email">email/username</label>

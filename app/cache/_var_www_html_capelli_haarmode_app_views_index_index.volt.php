@@ -66,7 +66,7 @@
                                     <span class="card-title"><?php echo $p->naam; ?></span>
                                     <p><?php echo $p->beschrijving; ?></p>
                                     <div class="card-image">
-                                        <img src="../img/<?php echo $p->img; ?>">
+                                        <img src="img/<?php echo $p->img; ?>">
                                     </div>
                                 </div>
                                 <div class="card-action">
@@ -79,7 +79,7 @@
         </div>
     </section>
     <section class="parallax-container">
-        <div class="parallax"><img src="../img/foto.jpg"></div>
+        <div class="parallax"><img src="img/foto.jpg"></div>
     </section>
     <section id="behandeling">
         <article>

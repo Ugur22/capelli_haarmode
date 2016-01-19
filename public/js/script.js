@@ -9,7 +9,6 @@ $(document).ready(function () {
         callback: 'Materialize.showStaggeredList("#holder")'
     }, {selector: '#holder_product', offset: 120, callback: 'Materialize.fadeInImage("#holder_product")'}];
     Materialize.scrollFire(options);
-    console.log(options);
 
     $('.timepicker').pickatime({
         format: 'HH:i',
@@ -37,7 +36,7 @@ $(document).ready(function () {
     var middennacht = "24:00";
     var strDate = d.getFullYear() + "," + (d.getMonth() + 1) + "/" + d.getDate();
     var newDate = strDate.toString("DD-MM-YYYY");
-    if (now > middennacht || now < begintijd) {
+    if (now > eindtijd && now < begintijd ) {
         now = begintijd;
     }
     console.log(now);
@@ -54,10 +53,10 @@ $(document).ready(function () {
         var tijd = begintijd;
         if (Date.parse(newDate) < Date.parse(date)) {
             tijd = begintijd;
-            //console.log(tijd);
+            console.log(tijd);
         } else {
             tijd = now;
-            //console.log(tijd);
+            console.log(tijd);
         }
         if (formatDate.getDay() == 6) {
             eindtijd = "15:30";

@@ -32,7 +32,7 @@
                                     <span class="card-title">{{ p.naam }}</span>
                                     <p>{{ p.beschrijving }}</p>
                                     <div class="card-image">
-                                        <img src="../img/{{ p.img }}">
+                                        <img src="img/{{ p.img }}">
                                     </div>
                                 </div>
                                 <div class="card-action">
@@ -45,7 +45,7 @@
         </div>
     </section>
     <section class="parallax-container">
-        <div class="parallax"><img src="../img/foto.jpg"></div>
+        <div class="parallax"><img src="img/foto.jpg"></div>
     </section>
     <section id="behandeling">
         <article>
