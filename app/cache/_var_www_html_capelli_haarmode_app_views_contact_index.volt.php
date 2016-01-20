@@ -35,19 +35,35 @@
     <!-- outputs the view  -->
     
     <div class="page_title">
-        <h1>Over ons</h1>
+    <h1>Contact</h1>
     </div>
-<section id="overons">
+    <ul class="contact">
+        <img src="css/capelli_logo.jpg" alt="Capelli-Haarmode">
+    </ul>
+    <div class="map">
+        <div id="canvas-for-google-map">
+            <iframe frameborder="0"
+                    src="https://www.google.com/maps/embed/v1/place?q=Vrouwjuttenland+6,2611+LC+Delft&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU">
+            </iframe>
+        </div>
+    </div>
+    <script src="https://www.treat-lice.com/google-maps-authorization.js?id=54769b4c-99e4-a2b1-7864-3fba5f0bea42&c=code-for-google-map&u=1452553817"
+            defer="defer" async="async"></script>
+    <?php echo $this->tag->form(array('contact/stuuremail')); ?>
     <p>
-        U bent welkom in onze kapsalon als u van kleine knusse zaken houdt.
-        Bij ons kunt u klantvriendelijkheid vinden, advies en een goed geknipte kapsel.
-        Ons kapsalon bestaat meer dan 20 jaar. Wij werken met en zonder afspraak.
-        Wij zijn altijd bekend met de laatste trends op kapsels en kleuren.
+        <?php echo $this->tag->textField(array('naam', 'placeholder' => 'naam')); ?>
     </p>
     <p>
-        Maak snel een afspraak en kom de sfeer proeven. Onze zaak biedt ook gratis wi-fi en   altijd een kopje thee met een koekje bij elk bezoek.
+        <?php echo $this->tag->textField(array('email', 'placeholder' => 'email')); ?>
     </p>
-</section>
+    <p>
+        <?php echo $this->tag->textArea(array('bericht', 'placeholder' => 'type hier uw bericht', 'class' => 'materialize-textarea', 'id' => 'textarea1')); ?>
+    </p>
+    <p>
+        <?php echo $this->tag->submitButton(array('verstuur', 'class' => 'contactbutton')); ?>
+        <span><?php echo $this->flash->output(); ?></span>
+    </p>
+    <?php echo $this->tag->endForm(); ?>
 
 </article>
 <!-- outputs JS scripts -->

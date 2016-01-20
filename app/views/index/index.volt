@@ -49,20 +49,19 @@
     </section>
     <section id="behandeling">
         <article>
-            <h1>behandelingen</h1>
+            <h1>Prijzenlijst</h1>
             <ul class="row" id="holder">
                 {% for b in behandeling %}
-                    <li class="col s12 m7" id="behandelingen">
-                        <div class="card">
-                            <div class="card-content">
-                                <span class="card-title">{{ b.behandeling }}</span>
-                                <p>&euro;{{ b.prijs }}</p>
-                            </div>
-                            <div class="card-action">
-                            </div>
-                        </div>
-                    </li>
+                    <li>
+                        <span class="card-title">{{ b.behandeling }} &euro;{{ b.prijs }}</span></li>
                 {% endfor %}
+                <h3>Dinsdag tot en met Donderdag:</h3>
+                <ul>
+                    <li>Kinderen knippen t/m 12 jaar &euro;18,50,- </li>
+                    <li>studenten  korting Dames: &euro; 21,50,-</li>
+                    <li>studenten  korting Heren: &euro; 21,-</li>
+                    <li></li>
+                </ul>
             </ul>
         </article>
     </section>

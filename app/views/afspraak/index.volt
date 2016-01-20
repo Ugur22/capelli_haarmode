@@ -6,11 +6,11 @@
 {{ form('afspraak/toevoegen') }}
 <p>
     <label for="datum">datum</label>
-    {{  text_field("datum","class":"datepicker","placeholder":"klik hier om een datum te kiezen") }}
+    {{  text_field("datum","class":"datepicker","placeholder":"klik hier om een datum te kiezen","value":this.request.getPost('datum')) }}
 </p>
 <p>
     <label for="begintijd">begintijd:</label>
-    {{ text_field("begintijd","class":"timepicker","placeholder":"klik hier om een tijd te kiezen") }}
+    {{ text_field("begintijd","class":"timepicker","placeholder":"klik hier om een tijd te kiezen","value":this.request.getPost('begintijd')) }}
 </p>
 <p>
     <label for="behandeling">behandeling</label>
@@ -18,7 +18,7 @@
     <select name="behandeling_id" class="select">
      <option value="" disabled selected> kies een behandeling</option>
         {% for b in behandeling %}
-            <option value="{{ b.id }}">{{ b.behandeling|upper|escape }} <span> - €{{ b.prijs }}</span></option>
+            <option value="{{ b.id }}">{{ b.behandeling|upper|escape }} <span> - €{{ b.prijs | escape }}</span></option>
         {% endfor %}
     </select>
     </div>

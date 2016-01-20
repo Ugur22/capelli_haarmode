@@ -5,22 +5,13 @@
     </div>
 <section id="overons">
     <p>
-       Capelli Haarmode innoveert op het gebied van haarmode
+        U bent welkom in onze kapsalon als u van kleine knusse zaken houdt.
+        Bij ons kunt u klantvriendelijkheid vinden, advies en een goed geknipte kapsel.
+        Ons kapsalon bestaat meer dan 20 jaar. Wij werken met en zonder afspraak.
+        Wij zijn altijd bekend met de laatste trends op kapsels en kleuren.
     </p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-        aute irure dolor
-        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-        cupidatat non proident,
-        sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <p>
+        Maak snel een afspraak en kom de sfeer proeven. Onze zaak biedt ook gratis wi-fi en   altijd een kopje thee met een koekje bij elk bezoek.
     </p>
-    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-        aute irure dolor
-        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-        cupidatat non proident,
-        sunt in culpa qui officia deserunt mollit anim id est laborum</p>
 </section>
 {% endblock %}

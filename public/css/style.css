@@ -20,6 +20,8 @@ label{font-size: 23px;}
 /* input fields */
 input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date],
 input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {  font-size: 23px;  }
+/* images */
+.contact img {  width: 54%;  }
 /* textarea */
 textarea { resize: none;}
 /* section */
@@ -40,7 +42,7 @@ ul#holder_product {  margin: 0 auto;  }
 .card .card-content p {  color: #727272;  height: 100px; padding-bottom: 5px;  }
 #behandelingen .card-content{  height: 200px;  }
 #behandelingen {opacity: 0;}
-.row {  margin: 0 auto;width: 90%;}
+.row {  margin: 0 auto;padding-bottom: 35px;width: 90%;}
 section {  height:auto;  width: 100%;}
 #home article{height: 800px;color: #fff;}
 /*article css*/
@@ -72,7 +74,7 @@ ul.contact {  width: 50%;float: left;}
 /* logo */
 img#logo {  width: 300px;  height: 100%;  }
 /* responsive css*/
-@media screen and (max-width: 980px) {  #overons p {  width: 90%;  } .col.s12.m7 {  width: 100%;  margin-top: 13px;}
+@media screen and (max-width: 980px) {  #overons p {  width: 90%;  } .col.s12.m7 {  width: 100%;  margin-top: 13px;} #canvas-for-google-map { width: 90%; margin: 0 auto; } .contact img {  width: 80%;  }
     #holder_product>.col.s12.m7 .card-content {height: auto;}  td, th {  font-size: 20px;  }
     .data-error { width: 100%;  display: block;} .data-warning { width: 100%;  display: block;}  .header {  width: 88%;  } #submenu {display: none;}
     #aboutus {height: auto;} .hide_row{display: none;} form.login-form {  width: 100%;}   }

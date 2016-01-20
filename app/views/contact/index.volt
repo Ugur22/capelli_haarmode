@@ -4,7 +4,7 @@
     <h1>Contact</h1>
     </div>
     <ul class="contact">
-        <img src="img/capelli_logo.png" alt="Capelli-Haarmode">
+        <img src="css/capelli_logo.jpg" alt="Capelli-Haarmode">
     </ul>
     <div class="map">
         <div id="canvas-for-google-map">
