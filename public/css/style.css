@@ -21,12 +21,12 @@ label{font-size: 23px;}
 input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date],
 input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {  font-size: 23px;  }
 /* images */
-.contact img {  width: 54%;  }
+.contact img {  width: 54%;height: 100%;}
 /* textarea */
 textarea { resize: none;}
 /* section */
 article h1 {  padding-top: 20px;  }
-.page_title h1{color:#fff;}
+.page_title h1,h3{color:#fff;}
 #producten { background-color: #ECE9E5;min-height: 610px;}
 #producten>article p { margin: 0 auto;font-size: 23px;width: 62%;padding-bottom: 35px;}
 #producten>article{color: #000;padding-top: 1px; text-align: center;}
@@ -50,10 +50,12 @@ section {  height:auto;  width: 100%;}
 #overons p {text-align: center;margin: 0 auto;color: #fff;font-size: 23px;width: 62%;padding-bottom: 35px;}
 article li{font-size: 23px;}
 h1 {  text-align: center;font-size: 3.2rem;}
+h3 {  text-align: center}
 article label,input {color:#fff;}
 /* form */
 form, table {padding: 10px;color: #fff;}
 form.login-form {  width: 20%;  margin: 0 auto;  }
+form.forms {width: 48%;margin: 0 auto;}
 /*table*/
 table.highlight > tbody > tr:hover,table.highlight > tbody > tr:hover a { color:#000;}
 td, th {  font-size: 22px;  }
@@ -63,21 +65,25 @@ td, th {  font-size: 22px;  }
 /* error xdebug */
 table.xdebug-error.xe-notice {  color: black;  }
 /* google maps */
-.map {width: 40%;overflow:hidden;height:500px;color:red;margin-right: 25px;float: right;}
-#canvas-for-google-map{height:100%; width:100%;max-width:100%;}
+.map {width: 100%;overflow:hidden;height:500px;color:red;}
+#canvas-for-google-map{height:100%;max-width:100%;}
 iframe {height:100%;width:100%;border:0;}
 .map iframe:hover{  pointer-events: auto;  }
 .map iframe{  pointer-events: none; }
 /* contact pagina */
-ul.contact {  width: 50%;float: left;}
+ul.contact {  width: 50%;height: 500px;float: left;}
+input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+    margin: 0px 0px 0px 0px;
+}
 .contact li {  padding: 10px;  }
 /* logo */
 img#logo {  width: 300px;  height: 100%;  }
 /* responsive css*/
-@media screen and (max-width: 980px) {  #overons p {  width: 90%;  } .col.s12.m7 {  width: 100%;  margin-top: 13px;} #canvas-for-google-map { width: 90%; margin: 0 auto; } .contact img {  width: 80%;  }
+@media screen and (max-width: 500px) { form.forms {  width: 90%; } }
+@media screen and (max-width: 980px) {  #overons p {  width: 90%;  } .col.s12.m7 {  width: 100%;  margin-top: 13px;} form.forms {  width: 90%; }  .contact img {  width: 90%;  }
     #holder_product>.col.s12.m7 .card-content {height: auto;}  td, th {  font-size: 20px;  }
     .data-error { width: 100%;  display: block;} .data-warning { width: 100%;  display: block;}  .header {  width: 88%;  } #submenu {display: none;}
     #aboutus {height: auto;} .hide_row{display: none;} form.login-form {  width: 100%;}   }
 input[type="submit"]:hover {background-color: #000;  color: #fff; }
 input[type="submit"] {  background-color: #fff;  color: #000;  font-weight: bold; float: right;width: 141px;}
-@media screen and (max-width: 980px) {  ul.contact {  width: 100%;  } .map {width: 96%; padding-bottom: 10px;} }
+@media screen and (max-width: 980px) {  ul.contact {width: 96%;} .map {padding-bottom: 10px;margin: 0 auto;} }

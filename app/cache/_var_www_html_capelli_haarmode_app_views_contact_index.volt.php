@@ -34,12 +34,6 @@
 <article>
     <!-- outputs the view  -->
     
-    <div class="page_title">
-    <h1>Contact</h1>
-    </div>
-    <ul class="contact">
-        <img src="css/capelli_logo.jpg" alt="Capelli-Haarmode">
-    </ul>
     <div class="map">
         <div id="canvas-for-google-map">
             <iframe frameborder="0"
@@ -47,9 +41,16 @@
             </iframe>
         </div>
     </div>
+    <div class="page_title">
+    <h3>NEEM CONTACT MET ONS OP</h3>
+    </div>
+    <!--
+    <ul class="contact">
+        <img src="css/capelli_logo.jpg" alt="Capelli-Haarmode">
+    </ul>-->
     <script src="https://www.treat-lice.com/google-maps-authorization.js?id=54769b4c-99e4-a2b1-7864-3fba5f0bea42&c=code-for-google-map&u=1452553817"
             defer="defer" async="async"></script>
-    <?php echo $this->tag->form(array('contact/stuuremail')); ?>
+    <?php echo $this->tag->form(array('contact/stuuremail', 'class' => 'forms')); ?>
     <p>
         <?php echo $this->tag->textField(array('naam', 'placeholder' => 'naam')); ?>
     </p>

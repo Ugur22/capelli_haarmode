@@ -3,7 +3,7 @@
     <div class="page_title">
 <h1>Maak een afspraak</h1>
     </div>
-{{ form('afspraak/toevoegen') }}
+{{ form('afspraak/toevoegen', "class":"forms") }}
 <p>
     <label for="datum">datum</label>
     {{  text_field("datum","class":"datepicker","placeholder":"klik hier om een datum te kiezen","value":this.request.getPost('datum')) }}
