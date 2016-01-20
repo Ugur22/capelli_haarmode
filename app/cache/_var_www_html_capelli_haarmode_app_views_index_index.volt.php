@@ -89,7 +89,7 @@
                     <li>
                         <span class="card-title"><?php echo $b->behandeling; ?> &euro;<?php echo $b->prijs; ?></span></li>
                 <?php } ?>
-                <h3>Dinsdag tot en met Donderdag:</h3>
+                <h2>Dinsdag tot en met Donderdag:</h2>
                 <ul>
                     <li>Kinderen knippen t/m 12 jaar &euro;18,50,- </li>
                     <li>studenten  korting Dames: &euro; 21,50,-</li>

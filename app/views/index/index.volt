@@ -55,7 +55,7 @@
                     <li>
                         <span class="card-title">{{ b.behandeling }} &euro;{{ b.prijs }}</span></li>
                 {% endfor %}
-                <h3>Dinsdag tot en met Donderdag:</h3>
+                <h2>Dinsdag tot en met Donderdag:</h2>
                 <ul>
                     <li>Kinderen knippen t/m 12 jaar &euro;18,50,- </li>
                     <li>studenten  korting Dames: &euro; 21,50,-</li>
