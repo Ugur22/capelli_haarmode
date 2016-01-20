@@ -65,7 +65,7 @@ td, th {  font-size: 22px;  }
 /* error xdebug */
 table.xdebug-error.xe-notice {  color: black;  }
 /* google maps */
-.map {width: 100%;overflow:hidden;height:500px;color:red;}
+.map {width: 100%;overflow:hidden;height: 521px;color:red;}
 #canvas-for-google-map{height:100%;margin-top: 17px;max-width:100%;}
 iframe {height:100%;width:100%;border:0;}
 .map iframe:hover{  pointer-events: auto;  }
