@@ -55,7 +55,7 @@ article label,input {color:#fff;}
 /* form */
 form, table {padding: 10px;color: #fff;}
 form.login-form {  width: 20%;  margin: 0 auto;  }
-form.forms {width: 48%;margin: 0 auto;}
+form.forms {width: 48%;margin: 0 auto;margin-bottom: 10px;}
 /*table*/
 table.highlight > tbody > tr:hover,table.highlight > tbody > tr:hover a { color:#000;}
 td, th {  font-size: 22px;  }
@@ -66,7 +66,7 @@ td, th {  font-size: 22px;  }
 table.xdebug-error.xe-notice {  color: black;  }
 /* google maps */
 .map {width: 100%;overflow:hidden;height:500px;color:red;}
-#canvas-for-google-map{height:100%;max-width:100%;}
+#canvas-for-google-map{height:100%;margin-top: 17px;max-width:100%;}
 iframe {height:100%;width:100%;border:0;}
 .map iframe:hover{  pointer-events: auto;  }
 .map iframe{  pointer-events: none; }
