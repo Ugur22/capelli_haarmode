@@ -36,7 +36,7 @@ $(document).ready(function () {
     var middennacht = "24:00";
     var strDate = d.getFullYear() + "," + (d.getMonth() + 1) + "/" + d.getDate();
     var newDate = strDate.toString("DD-MM-YYYY");
-    if (now > eindtijd && now < begintijd ) {
+    if (now > middennacht) {
         now = begintijd;
     }
     console.log(now);
